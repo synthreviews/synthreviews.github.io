@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#05123a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Synth Verdict">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+
+<title>Synth Verdict | Recenze syntezátorů a hudebních pluginů</title>
+<meta name="description" content="Nezávislé recenze syntezátorů a produkčních pluginů — Omnisphere, Nord Lead 4, Nexus 5, Rippler, XLN XO a další. Zvuk, workflow, cena a verdikt.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Synth Verdict">
+<link rel="canonical" href="https://example.com/">
+
+<meta property="og:title" content="Synth Verdict | Recenze syntezátorů a pluginů">
+<meta property="og:description" content="Nezávislé, podrobné recenze syntezátorů a hudebních pluginů se skóre a verdiktem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Synth Verdict",
+  "url": "https://example.com/",
+  "description": "Recenze syntezátorů a hudebních produkčních pluginů."
+}
+</script>
+</head>
+<body data-sw-path="./sw.js">
+
+<div class="starfield" id="starfield" aria-hidden="true"></div>
+<div class="horizon" aria-hidden="true"></div>
+
+<main class="container">
+
+<div class="install-banner" id="install-banner">
+  <span>📲 Nainstalovat Synth Verdict jako appku</span>
+  <span style="display:flex; gap:8px;">
+    <button id="install-btn">Instalovat</button>
+    <button id="install-dismiss" style="background:transparent;border:1px solid var(--card-border);color:var(--text);border-radius:999px;padding:8px 14px;cursor:pointer;">✕</button>
+  </span>
+</div>
+
+<header class="site-header">
+  <h1 class="brand">SYNTH VERDICT</h1>
+  <p class="tagline">Nezávislé recenze syntezátorů a hudebních pluginů — zvuk, workflow, cena, verdikt.</p>
+  <nav class="nav-links" aria-label="Hlavní navigace">
+    <a href="index.html" class="active">🏠 Domů</a>
+    <a href="reviews/omnisphere.html">🎹 Omnisphere</a>
+    <a href="reviews/nord-lead-4.html">⚡ Nord Lead 4</a>
+    <a href="reviews/nexus5.html">🌌 Nexus 5</a>
+    <a href="reviews/rippler.html">🌊 Rippler</a>
+    <a href="reviews/xo-xo.html">🥁 XO-XO</a>
+  </nav>
+</header>
+
+<h2 class="section-title">Nejnovější <span>recenze</span></h2>
+
+<div class="grid">
+
+  <a class="card" href="reviews/omnisphere.html">
+    <span class="kicker">Softwarový syntezátor</span>
+    <h3>Spectrasonics Omnisphere 2.8</h3>
+    <p>Referenční zvukový engine s obří knihovnou, granulární syntézou a hlubokým sound designem. Stále na špici i po letech.</p>
+    <div class="meta"><span class="stars">★★★★★</span><span>9.4 / 10</span></div>
+  </a>
+
+  <a class="card" href="reviews/nord-lead-4.html">
+    <span class="kicker">Hardwarový syntezátor</span>
+    <h3>Nord Lead 4</h3>
+    <p>Rychlá virtuálně-analogová syntéza s legendárním okamžitým ovládáním. Menší polyfonie, ale bleskový workflow.</p>
+    <div class="meta"><span class="stars">★★★★☆</span><span>8.6 / 10</span></div>
+  </a>
+
+  <a class="card" href="reviews/nexus5.html">
+    <span class="kicker">ROMpler / plugin</span>
+    <h3>reFX Nexus 5</h3>
+    <p>Přehledný a rychlý ROMpler s obřím množstvím presetů pro pop, EDM a trap produkci — s novým modulačním enginem.</p>
+    <div class="meta"><span class="stars">★★★★☆</span><span>8.2 / 10</span></div>
+  </a>
+
+  <a class="card" href="reviews/rippler.html">
+    <span class="kicker">Efektový plugin</span>
+    <h3>Baby Audio Rippler</h3>
+    <p>Kreativní granulární delay/echo efekt s texturami, které se hodí přesně do ambientní a chillout produkce.</p>
+    <div class="meta"><span class="stars">★★★★☆</span><span>8.5 / 10</span></div>
+  </a>
+
+  <a class="card" href="reviews/xo-xo.html">
+    <span class="kicker">Bicí / sample plugin</span>
+    <h3>XLN Audio XO</h3>
+    <p>Vizuální bicí sampler s AI vyhledáváním zvuků, sample packy a rychlým skládáním groove patternů.</p>
+    <div class="meta"><span class="stars">★★★★½</span><span>8.9 / 10</span></div>
+  </a>
+
+</div>
+
+<h2 class="section-title">O <span>webu</span></h2>
+<article class="review" style="text-align:center;">
+  <p>Synth Verdict testuje syntezátory a produkční pluginy z pohledu praktického použití ve skladbách — ne jen podle specifikací. Každá recenze obsahuje hodnocení zvuku, workflow, stability a poměru cena/výkon, plus jasné plusy a mínusy.</p>
+</article>
+
+<footer>
+  <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
+</footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
