@@ -18,12 +18,12 @@
 <meta name="description" content="Nezávislé recenze syntezátorů a produkčních pluginů — Omnisphere, Nord Lead 4, Nexus 5, Rippler, XLN XO a další. Zvuk, workflow, cena a verdikt.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Synth Verdict">
-<link rel="canonical" href="https://example.com/">
+<link rel="canonical" href="https://synthreviews.github.io/">
 
 <meta property="og:title" content="Synth Verdict | Recenze syntezátorů a pluginů">
 <meta property="og:description" content="Nezávislé, podrobné recenze syntezátorů a hudebních pluginů se skóre a verdiktem.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://example.com/">
+<meta property="og:url" content="https://synthreviews.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,10 +37,16 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Synth Verdict",
-  "url": "https://example.com/",
+  "url": "https://synthreviews.github.io/",
   "description": "Recenze syntezátorů a hudebních produkčních pluginů."
 }
 </script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:14px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+</style>
 </head>
 <body data-sw-path="./sw.js">
 
@@ -50,78 +56,143 @@
 <main class="container">
 
 <div class="install-banner" id="install-banner">
-  <span>📲 Nainstalovat Synth Verdict jako appku</span>
+  <span data-i18n="install-banner">📲 Nainstalovat Synth Verdict jako appku</span>
   <span style="display:flex; gap:8px;">
-    <button id="install-btn">Instalovat</button>
+    <button id="install-btn" data-i18n="install-btn">Instalovat</button>
     <button id="install-dismiss" style="background:transparent;border:1px solid var(--card-border);color:var(--text);border-radius:999px;padding:8px 14px;cursor:pointer;">✕</button>
   </span>
 </div>
 
 <header class="site-header">
   <h1 class="brand">SYNTH VERDICT</h1>
-  <p class="tagline">Nezávislé recenze syntezátorů a hudebních pluginů — zvuk, workflow, cena, verdikt.</p>
+  <p class="tagline" data-i18n="tagline">Nezávislé recenze syntezátorů a hudebních pluginů — zvuk, workflow, cena, verdikt.</p>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="index.html" class="active">🏠 Domů</a>
-    <a href="reviews/omnisphere.html">🎹 Omnisphere</a>
-    <a href="reviews/nord-lead-4.html">⚡ Nord Lead 4</a>
-    <a href="reviews/nexus5.html">🌌 Nexus 5</a>
-    <a href="reviews/rippler.html">🌊 Rippler</a>
-    <a href="reviews/xo-xo.html">🥁 XO-XO</a>
+    <a href="index.html" class="active" data-i18n="nav-home">🏠 Domů</a>
+    <a href="reviews/omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="reviews/nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="reviews/nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="reviews/rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="reviews/xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
   </nav>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
 </header>
 
-<h2 class="section-title">Nejnovější <span>recenze</span></h2>
+<h2 class="section-title" data-i18n="latest-title">Nejnovější <span>recenze</span></h2>
 
 <div class="grid">
 
   <a class="card" href="reviews/omnisphere.html">
-    <span class="kicker">Softwarový syntezátor</span>
-    <h3>Spectrasonics Omnisphere 2.8</h3>
-    <p>Referenční zvukový engine s obří knihovnou, granulární syntézou a hlubokým sound designem. Stále na špici i po letech.</p>
+    <span class="kicker" data-i18n="card-omni-kicker">Softwarový syntezátor</span>
+    <h3 data-i18n="card-omni-title">Spectrasonics Omnisphere 3</h3>
+    <p data-i18n="card-omni-desc">Vlajkový zvukový engine Spectrasonics s 18 novými zvukovými knihovnami, granulární i wavetable syntézou a přes 300 profily pro hardwarovou integraci.</p>
     <div class="meta"><span class="stars">★★★★★</span><span>9.4 / 10</span></div>
   </a>
 
   <a class="card" href="reviews/nord-lead-4.html">
-    <span class="kicker">Hardwarový syntezátor</span>
-    <h3>Nord Lead 4</h3>
-    <p>Rychlá virtuálně-analogová syntéza s legendárním okamžitým ovládáním. Menší polyfonie, ale bleskový workflow.</p>
+    <span class="kicker" data-i18n="card-nord-kicker">Hardwarový syntezátor</span>
+    <h3 data-i18n="card-nord-title">Nord Lead 4</h3>
+    <p data-i18n="card-nord-desc">Virtuálně-analogová syntéza s legendárním okamžitým ovládáním. Dnes už modernímu klasikovi z roku 2013 s 20hlasou polyfonií.</p>
     <div class="meta"><span class="stars">★★★★☆</span><span>8.6 / 10</span></div>
   </a>
 
   <a class="card" href="reviews/nexus5.html">
-    <span class="kicker">ROMpler / plugin</span>
-    <h3>reFX Nexus 5</h3>
-    <p>Přehledný a rychlý ROMpler s obřím množstvím presetů pro pop, EDM a trap produkci — s novým modulačním enginem.</p>
+    <span class="kicker" data-i18n="card-nexus-kicker">Hybridní syntezátor / plugin</span>
+    <h3 data-i18n="card-nexus-title">reFX Nexus 5</h3>
+    <p data-i18n="card-nexus-desc">Z uzavřeného ROMpleru plně otevřený hybridní engine s 8 typy syntézy, importem vlastních samplů a obří knihovnou presetů pro pop, EDM a trap.</p>
     <div class="meta"><span class="stars">★★★★☆</span><span>8.2 / 10</span></div>
   </a>
 
   <a class="card" href="reviews/rippler.html">
-    <span class="kicker">Efektový plugin</span>
-    <h3>Baby Audio Rippler</h3>
-    <p>Kreativní granulární delay/echo efekt s texturami, které se hodí přesně do ambientní a chillout produkce.</p>
+    <span class="kicker" data-i18n="card-rippler-kicker">Softwarový syntezátor</span>
+    <h3 data-i18n="card-rippler-title">reFX Rippler</h3>
+    <p data-i18n="card-rippler-desc">Hybridní modální a virtuálně-analogový syntezátor s DNA Chromaphone — vznikl z open-source projektu RipplerX a v roce 2026 jej dotáhla reFX.</p>
     <div class="meta"><span class="stars">★★★★☆</span><span>8.5 / 10</span></div>
   </a>
 
   <a class="card" href="reviews/xo-xo.html">
-    <span class="kicker">Bicí / sample plugin</span>
-    <h3>XLN Audio XO</h3>
-    <p>Vizuální bicí sampler s AI vyhledáváním zvuků, sample packy a rychlým skládáním groove patternů.</p>
+    <span class="kicker" data-i18n="card-xo-kicker">Bicí / sample plugin</span>
+    <h3 data-i18n="card-xo-title">XLN Audio XO</h3>
+    <p data-i18n="card-xo-desc">Vizuální bicí sampler s přes 8700 samply, 240+ beat presety a chytrým vyhledáváním zvuku podle podobnosti.</p>
     <div class="meta"><span class="stars">★★★★½</span><span>8.9 / 10</span></div>
   </a>
 
 </div>
 
-<h2 class="section-title">O <span>webu</span></h2>
+<h2 class="section-title" data-i18n="about-title">O <span>webu</span></h2>
 <article class="review" style="text-align:center;">
-  <p>Synth Verdict testuje syntezátory a produkční pluginy z pohledu praktického použití ve skladbách — ne jen podle specifikací. Každá recenze obsahuje hodnocení zvuku, workflow, stability a poměru cena/výkon, plus jasné plusy a mínusy.</p>
+  <p data-i18n="about-text">Synth Verdict testuje syntezátory a produkční pluginy z pohledu praktického použití ve skladbách — ne jen podle specifikací. Každá recenze obsahuje hodnocení zvuku, workflow, stability a poměru cena/výkon, plus jasné plusy a mínusy. Fakta v recenzích průběžně ověřujeme podle oficiálních stránek výrobců.</p>
 </article>
 
-<footer>
-  <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
+<footer data-i18n="footer">
+© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.
 </footer>
 
 </main>
 
 <script src="app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'install-banner': '📲 Install Synth Verdict as an app',
+    'install-btn': 'Install',
+    'tagline': 'Independent reviews of synthesizers and music plugins — sound, workflow, price, verdict.',
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'latest-title': 'Latest <span>reviews</span>',
+    'card-omni-kicker': 'Software synthesizer',
+    'card-omni-title': 'Spectrasonics Omnisphere 3',
+    'card-omni-desc': "Spectrasonics' flagship sound engine with 18 new sound libraries, granular and wavetable synthesis, and over 300 hardware-integration profiles.",
+    'card-nord-kicker': 'Hardware synthesizer',
+    'card-nord-title': 'Nord Lead 4',
+    'card-nord-desc': 'Virtual-analog synthesis with legendary hands-on control. Now a modern classic from 2013, with 20-voice polyphony.',
+    'card-nexus-kicker': 'Hybrid synthesizer / plugin',
+    'card-nexus-title': 'reFX Nexus 5',
+    'card-nexus-desc': "From a closed ROMpler to a fully open hybrid engine with 8 synthesis types, custom sample import, and a huge preset library for pop, EDM and trap.",
+    'card-rippler-kicker': 'Software synthesizer',
+    'card-rippler-title': 'reFX Rippler',
+    'card-rippler-desc': 'A hybrid modal / virtual-analog synthesizer with Chromaphone DNA — grew out of the open-source RipplerX project, finished and released by reFX in 2026.',
+    'card-xo-kicker': 'Drum / sample plugin',
+    'card-xo-title': 'XLN Audio XO',
+    'card-xo-desc': 'A visual drum sampler with 8,700+ samples, 240+ beat presets and smart similarity-based sound search.',
+    'about-title': 'About <span>this site</span>',
+    'about-text': "Synth Verdict tests synthesizers and production plugins from a practical, in-the-mix perspective — not just by spec sheet. Every review covers sound, workflow, stability and value for money, plus clear pros and cons. We periodically re-check the facts in our reviews against manufacturers' official pages.",
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'cs';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
 </body>
 </html>

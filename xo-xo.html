@@ -17,7 +17,7 @@
 <title>Recenze XLN Audio XO | Synth Verdict</title>
 <meta name="description" content="Recenze bicího sampleru XO — vizuální vyhledávání zvuku, knihovna, cena a verdikt.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://example.com/reviews/xo-xo.html">
+<link rel="canonical" href="https://synthreviews.github.io/reviews/xo-xo.html">
 
 <meta property="og:title" content="Recenze XLN Audio XO — recenze | Synth Verdict">
 <meta property="og:description" content="Recenze bicího sampleru XO — vizuální vyhledávání zvuku, knihovna, cena a verdikt.">
@@ -47,6 +47,12 @@
   "author": { "@type": "Organization", "name": "Synth Verdict" }
 }
 </script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+</style>
 </head>
 <body data-sw-path="../sw.js">
 
@@ -58,76 +64,150 @@
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="../index.html">🏠 Domů</a>
-    <a href="omnisphere.html">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html">⚡ Nord Lead 4</a>
-    <a href="nexus5.html">🌌 Nexus 5</a>
-    <a href="rippler.html">🌊 Rippler</a>
-    <a href="xo-xo.html" class="active">🥁 XO-XO</a>
+    <a href="../index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" class="active" data-i18n="nav-xo">🥁 XO-XO</a>
   </nav>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
 </header>
 
 <div class="hero-art">
-  <span class="kicker">Bicí / sample plugin</span>
+  <span class="kicker" data-i18n="kicker">Bicí / sample plugin</span>
   <h1>XLN Audio XO</h1>
-  <p style="color:var(--text-dim);">Vizuální bicí sampler s AI vyhledáváním a rychlým skládáním groove.</p>
+  <p style="color:var(--text-dim);" data-i18n="hero-sub">Vizuální bicí sampler s chytrým vyhledáváním a rychlým skládáním groove.</p>
   <div class="verdict-score">⭐ 8.9 / 10 &nbsp;|&nbsp; ★★★★½</div>
 </div>
 
 <article class="review">
 
-<h2>Co je XLN Audio XO</h2>
-<p>XO je vizuální bicí sampler od XLN Audio postavený kolem obří knihovny samplů a chytrého vyhledávání zvuku. Místo procházení složek nabízí vizuální mapu zvuků podle podobnosti, což dramaticky zrychluje hledání "toho pravého" kicku nebo snare.</p>
+<h2 data-i18n="h-what">Co je XLN Audio XO</h2>
+<p data-i18n="p-what">XO je vizuální bicí sampler od XLN Audio postavený kolem obří knihovny samplů a chytrého vyhledávání zvuku. Místo procházení složek nabízí vizuální mapu zvuků podle podobnosti (tzv. XO Space), což dramaticky zrychluje hledání "toho pravého" kicku nebo snare.</p>
 
-<h2>Zvuk a knihovna</h2>
-<p>Knihovna obsahuje statisíce samplů napříč žánry — od akustických bicích přes elektronické 808 sady až po experimentální percussion. Kvalita samplů je vysoká a pravidelně se rozšiřuje o nové packy.</p>
+<h2 data-i18n="h-sound">Zvuk a knihovna</h2>
+<p data-i18n="p-sound">Základní edice obsahuje přes 8700 one-shot samplů a 240+ plně editovatelných beat presetů napříč žánry — od akustických bicích přes elektronické sady až po experimentální percussion. Knihovnu lze dále rozšířit o 29 volitelných expanzí s dalšími kurátorovanými zvuky a sekvencemi.</p>
 
-<h2>Ovládání a workflow</h2>
-<p>Vizuální mřížka podobnosti zvuků je hlavní devízou — kliknutím na zvuk se kolem něj zobrazí podobné varianty, takže jde velmi rychle experimentovat a skládat groove. AI vyhledávání podle textového popisu dál zrychluje proces.</p>
+<h2 data-i18n="h-workflow">Ovládání a workflow</h2>
+<p data-i18n="p-workflow">Vizuální mřížka podobnosti zvuků (XO Space) je hlavní devízou — kliknutím na zvuk se kolem něj zobrazí podobné varianty, takže lze velmi rychle experimentovat a skládat groove. Funkce Hot Swap umožňuje naživo měnit zvuky v rozehraném beatu a kdykoliv se vrátit k předchozí verzi, a Playground režim přidává další vrstvu náhodného objevování zvuků a patternů.</p>
 
-<h2>Cena</h2>
-<p>Základní verze je zdarma s omezenou knihovnou, plná verze (XO Producer/expanze) je zpoplatněná. Dobrý poměr cena/výkon vzhledem k rozsahu a rychlosti workflow.</p>
+<h2 data-i18n="h-price">Cena</h2>
+<p data-i18n="p-price">XO je čistě placený plugin bez trvale bezplatné verze — k dispozici je jen 10denní zkušební verze zdarma. Základní edice (plugin + jádrová knihovna 8700+ samplů a 240+ presetů) stojí 149 USD, varianta se 4 vybranými expanzemi 189 USD a XO Complete se všemi 29 expanzemi 439 USD.</p>
 
 <div class="pros-cons">
   <div class="pros">
-    <h4>Klady</h4>
+    <h4 data-i18n="pros-h">Klady</h4>
     <ul>
-      <li>Extrémně rychlé hledání a skládání bicích</li>
-      <li>Obrovská a kvalitní sample knihovna</li>
-      <li>Přehledné, vizuální rozhraní</li>
-      <li>Dostupná free verze na vyzkoušení</li>
+      <li data-i18n="pro1">Extrémně rychlé hledání a skládání bicích přes XO Space</li>
+      <li data-i18n="pro2">Obsáhlá jádrová knihovna (8700+ samplů, 240+ beat presetů)</li>
+      <li data-i18n="pro3">Přehledné, vizuální rozhraní s funkcí Hot Swap</li>
+      <li data-i18n="pro4">10denní zkušební verze zdarma na vyzkoušení</li>
     </ul>
   </div>
   <div class="cons">
-    <h4>Zápory</h4>
+    <h4 data-i18n="cons-h">Zápory</h4>
     <ul>
-      <li>Plný potenciál vyžaduje dokoupení packů</li>
-      <li>Není to plnohodnotný syntezátor bicích</li>
+      <li data-i18n="con1">Žádná trvale bezplatná verze, jen časově omezený trial</li>
+      <li data-i18n="con2">Plný potenciál vyžaduje dokoupení expanzí (až 439 USD za Complete)</li>
+      <li data-i18n="con3">Není to plnohodnotný syntezátor bicích</li>
     </ul>
   </div>
 </div>
 
-<h2>Specifikace</h2>
+<h2 data-i18n="h-specs">Specifikace</h2>
 <table class="specs-table">
-<tr><td>Typ</td><td>Bicí sampler (VST/AU/AAX)</td></tr>
-<tr><td>Knihovna</td><td>Statisíce samplů, rozšiřitelná</td></tr>
-<tr><td>Vyhledávání</td><td>Vizuální mapa podobnosti + AI textové hledání</td></tr>
-<tr><td>Platformy</td><td>Windows, macOS</td></tr>
+<tr><td data-i18n="spec1-k">Typ</td><td data-i18n="spec1-v">Bicí sampler (VST/AU/AAX + samostatná aplikace)</td></tr>
+<tr><td data-i18n="spec2-k">Knihovna</td><td data-i18n="spec2-v">8700+ samplů, 240+ beat presetů, 29 volitelných expanzí</td></tr>
+<tr><td data-i18n="spec3-k">Vyhledávání</td><td data-i18n="spec3-v">Vizuální mapa podobnosti (XO Space) + filtrování</td></tr>
+<tr><td data-i18n="spec4-k">Platformy</td><td data-i18n="spec4-v">Windows, macOS</td></tr>
+<tr><td data-i18n="spec5-k">Cena</td><td data-i18n="spec5-v">Od 149 USD (Complete se všemi expanzemi 439 USD)</td></tr>
 </table>
 
-<h2>Verdikt</h2>
-<p>XO patří k nejrychlejším způsobům, jak sestavit kvalitní bicí groove. Pro producenty, kteří chtějí místo procházení složek rychle "cítit" zvuk, je to jeden z nejužitečnějších nástrojů na trhu.</p>
+<h2 data-i18n="h-verdict">Verdikt</h2>
+<p data-i18n="p-verdict">XO patří k nejrychlejším způsobům, jak sestavit kvalitní bicí groove. Pro producenty, kteří chtějí místo procházení složek rychle "cítit" zvuk, je to jeden z nejužitečnějších nástrojů na trhu — jen počítejte s tím, že jde o čistě placenou investici bez trvalé free verze.</p>
 
 </article>
 
-<a class="back-link" href="../index.html">← Zpět na přehled recenzí</a>
+<a class="back-link" href="../index.html" data-i18n="back">← Zpět na přehled recenzí</a>
 
-<footer>
+<footer data-i18n="footer">
   <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
 </footer>
 
 </main>
 
 <script src="../app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'kicker': 'Drum / sample plugin',
+    'hero-sub': 'A visual drum sampler with smart search and fast groove building.',
+    'h-what': 'What XLN Audio XO is',
+    'p-what': "XO is a visual drum sampler from XLN Audio built around a huge sample library and smart sound search. Instead of digging through folders, it offers a visual similarity map of your sounds (called XO Space), which dramatically speeds up finding the right kick or snare.",
+    'h-sound': 'Sound and library',
+    'p-sound': "The core edition includes over 8,700 one-shot samples and 240+ fully editable beat presets spanning genres — from acoustic drums through electronic kits to experimental percussion. The library can be further expanded with 29 optional expansions offering more curated sounds and sequences.",
+    'h-workflow': 'Controls and workflow',
+    'p-workflow': "The visual similarity grid (XO Space) is the main selling point — clicking a sound surfaces similar variations around it, making it very fast to experiment and build a groove. The Hot Swap feature lets you change sounds live inside a playing beat and revert at any time, and Playground mode adds another layer of random sound and pattern discovery.",
+    'h-price': 'Price',
+    'p-price': "XO is a purely paid plugin with no permanent free version — only a 10-day free trial is available. The core edition (plugin plus the 8,700+ sample, 240+ preset core library) costs $149, the version with 4 chosen expansions is $189, and XO Complete with all 29 expansions is $439.",
+    'pros-h': 'Pros',
+    'pro1': 'Extremely fast drum searching and beat building via XO Space',
+    'pro2': 'Substantial core library (8,700+ samples, 240+ beat presets)',
+    'pro3': 'Clear, visual interface with a Hot Swap feature',
+    'pro4': 'A 10-day free trial to try before you buy',
+    'cons-h': 'Cons',
+    'con1': 'No permanent free version, only a time-limited trial',
+    'con2': 'Full potential requires buying expansions (up to $439 for Complete)',
+    'con3': "Not a full-fledged drum synthesizer",
+    'h-specs': 'Specifications',
+    'spec1-k': 'Type', 'spec1-v': 'Drum sampler (VST/AU/AAX + standalone app)',
+    'spec2-k': 'Library', 'spec2-v': '8,700+ samples, 240+ beat presets, 29 optional expansions',
+    'spec3-k': 'Search', 'spec3-v': 'Visual similarity map (XO Space) + filtering',
+    'spec4-k': 'Platforms', 'spec4-v': 'Windows, macOS',
+    'spec5-k': 'Price', 'spec5-v': 'From $149 (Complete with all expansions $439)',
+    'h-verdict': 'Verdict',
+    'p-verdict': "XO is one of the fastest ways to put together a quality drum groove. For producers who want to quickly 'feel' the sound instead of digging through folders, it's one of the most useful tools on the market — just budget for it as a purely paid investment with no permanent free tier.",
+    'back': '← Back to all reviews',
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'cs';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
 </body>
 </html>

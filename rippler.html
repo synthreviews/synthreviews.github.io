@@ -14,13 +14,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16.png">
 
-<title>Recenze Baby Audio Rippler | Synth Verdict</title>
-<meta name="description" content="Recenze granulárního delay efektu Rippler — texturní zvuk pro ambient a chillout.">
+<title>Recenze reFX Rippler | Synth Verdict</title>
+<meta name="description" content="Recenze reFX Rippler — hybridní modální a virtuálně-analogový syntezátor s DNA Chromaphone. Zvuk, ovládání, cena a verdikt.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://example.com/reviews/rippler.html">
+<link rel="canonical" href="https://synthreviews.github.io/reviews/rippler.html">
 
-<meta property="og:title" content="Recenze Baby Audio Rippler — recenze | Synth Verdict">
-<meta property="og:description" content="Recenze granulárního delay efektu Rippler — texturní zvuk pro ambient a chillout.">
+<meta property="og:title" content="Recenze reFX Rippler — recenze | Synth Verdict">
+<meta property="og:description" content="Recenze reFX Rippler — hybridní modální syntezátor vzniklý z open-source projektu RipplerX.">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -36,8 +36,8 @@
   "@type": "Review",
   "itemReviewed": {
     "@type": "Product",
-    "name": "Baby Audio Rippler",
-    "brand": "Baby Audio"
+    "name": "reFX Rippler",
+    "brand": "reFX"
   },
   "reviewRating": {
     "@type": "Rating",
@@ -47,6 +47,13 @@
   "author": { "@type": "Organization", "name": "Synth Verdict" }
 }
 </script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+.correction-note{font-size:0.85rem;color:var(--text-dim);border-left:3px solid rgba(0,240,255,0.5);padding:8px 14px;margin:0 0 24px;background:rgba(255,255,255,0.03);border-radius:0 8px 8px 0;}
+</style>
 </head>
 <body data-sw-path="../sw.js">
 
@@ -58,75 +65,158 @@
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="../index.html">🏠 Domů</a>
-    <a href="omnisphere.html">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html">⚡ Nord Lead 4</a>
-    <a href="nexus5.html">🌌 Nexus 5</a>
-    <a href="rippler.html" class="active">🌊 Rippler</a>
-    <a href="xo-xo.html">🥁 XO-XO</a>
+    <a href="../index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" class="active" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
   </nav>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
 </header>
 
 <div class="hero-art">
-  <span class="kicker">Efektový plugin</span>
-  <h1>Baby Audio Rippler</h1>
-  <p style="color:var(--text-dim);">Granulární delay/echo pro organické, pohyblivé textury.</p>
+  <span class="kicker" data-i18n="kicker">Softwarový syntezátor</span>
+  <h1>reFX Rippler</h1>
+  <p style="color:var(--text-dim);" data-i18n="hero-sub">Hybridní modální a virtuálně-analogový syntezátor s DNA Chromaphone.</p>
   <div class="verdict-score">⭐ 8.5 / 10 &nbsp;|&nbsp; ★★★★☆</div>
 </div>
 
 <article class="review">
 
-<h2>Co je Rippler</h2>
-<p>Rippler od Baby Audio je kreativní efektový plugin kombinující granulární delay, echo a texturní modulaci. Není to klasický "opakovací" delay — cílí na tvorbu pohyblivých, organických textur, které se hodí zejména do ambientní, chillout a downtempo produkce.</p>
+<p class="correction-note" data-i18n="correction">Pozn. redakce: Tato recenze byla přepracována — Rippler není efektový plugin od Baby Audio, ale samostatný hybridní syntezátor od reFX (tvůrců Nexusu).</p>
 
-<h2>Zvuk</h2>
-<p>Granulární jádro rozkládá vstupní signál na drobné zrnka a ty pak modulárně rozehrává v čase — výsledkem jsou jemně "rozplizlé", snové ozvěny, které klasický delay nedokáže nabídnout. Skvěle funguje na pady, vokály i perkuse, kde vytváří pohyblivé, dýchající pozadí.</p>
+<h2 data-i18n="h-what">Co je Rippler</h2>
+<p data-i18n="p-what">reFX Rippler vznikl na základech open-source projektu RipplerX brazilského vývojáře Tiaga Ribeira (Tilr), který si vzal za vzor modální syntézu pluginu Chromaphone 3 od AAS. Po dohodě s reFX — tvůrci Nexusu — byl projekt v červenci 2026 přetvořen na plnohodnotný komerční hybridní syntezátor s výrazně rozšířeným feature setem oproti původní open-source verzi.</p>
 
-<h2>Ovládání a workflow</h2>
-<p>Rozhraní je přehledné a rychlé na experimentování — pár klíčových knoflíků (velikost zrna, rozptyl, feedback, tón) stačí k dramatické proměně zvuku. Vestavěné presety jsou dobrým startovním bodem pro rychlé objevování možností.</p>
+<h2 data-i18n="h-sound">Zvuk a syntéza</h2>
+<p data-i18n="p-sound">Rippler kombinuje modální syntézu (exciter + rezonátor) s klasickou subtraktivní virtuálně-analogovou syntézou ve dvou vrstvách, A a B, které lze vrstvit, ale ne rozdělit na dva samostatné zvuky (split/stack) jako u Chromaphone 3. K rozeznění rezonátorů slouží impulsní exciter s možností importu vlastních zvuků jako impulsů, klasický šumový generátor nebo přímo audio vstup přes side-chain — díky tomu se dá Rippler použít i jako efektový procesor rezonátorů na cizí signál. K dispozici je 12 typů rezonátorů (o 4 víc než Chromaphone 3) až s 64 partiály, zapojitelných paralelně nebo sériově, plus manuální režim pro vlastní naladění.</p>
 
-<h2>Cena</h2>
-<p>Jde o cenově dostupný efektový plugin ve srovnání s většími syntezátorovými balíky — dobrá volba pro produkci, kde jde primárně o texturu a atmosféru, ne o samotnou generaci zvuku.</p>
+<h2 data-i18n="h-workflow">Ovládání a workflow</h2>
+<p data-i18n="p-workflow">Každá vrstva má dva multimode filtry (celkem 4, s 27 typy včetně hřebenových a vokálového filtru), bohatý modulační engine (obálky, LFO, náhodné generátory, MPE, makra) a plně programovatelný arpeggiator/sekvencer až s 32 kroky včetně editoru pro vlastní patterny. Uživatelské rozhraní vychází z původního open-source projektu, reFX ho ale zvětšili, graficky vyladili a udělali přehlednějším.</p>
+
+<h2 data-i18n="h-fx">Efekty</h2>
+<p data-i18n="p-fx">Každá vrstva i globální sběrnice mají vlastní multi-FX s 12 efekty — chorus, distorce, EQ, tremolo, stereoizér a další — včetně granulárního procesoru s názvem Particle, páskového emulátoru Magnetic a BBD delaye zvaného bucket delay. Reverb nabízí na výběr mezi algoritmickým RutaVerb (pět barevných režimů se shimmerem) pro velké ambientní prostory a lehčím MiniVerb pro jemné doladění bez dominance.</p>
+
+<h2 data-i18n="h-price">Instalace a cena</h2>
+<p data-i18n="p-price">Rippler se instaluje přes aplikaci reFX Cloud s povinnou online registrací — offline instalace není možná. Běží jako VST3, AU a AAX na macOS (Intel i Apple Silicon) a Windows; chybí samostatná (standalone) verze i podpora Linuxu, kterou měla ještě původní open-source verze. Startovní cena je 99 € místo běžných 129 €, k dispozici je 30denní zkušební verze.</p>
 
 <div class="pros-cons">
   <div class="pros">
-    <h4>Klady</h4>
+    <h4 data-i18n="pros-h">Klady</h4>
     <ul>
-      <li>Unikátní granulární texturní efekty</li>
-      <li>Jednoduché, intuitivní rozhraní</li>
-      <li>Ideální pro ambient a chillout produkci</li>
-      <li>Přívětivá cena</li>
+      <li data-i18n="pro1">Hluboká modální syntéza s 12 typy rezonátorů a importem vlastních impulsů</li>
+      <li data-i18n="pro2">Hybridní kombinace s plnohodnotnou virtuálně-analogovou vrstvou</li>
+      <li data-i18n="pro3">Bohatý modulační engine a plně programovatelný arpeggiator/sekvencer</li>
+      <li data-i18n="pro4">Granulární procesor Particle a dvojice kvalitních reverbů</li>
     </ul>
   </div>
   <div class="cons">
-    <h4>Zápory</h4>
+    <h4 data-i18n="cons-h">Zápory</h4>
     <ul>
-      <li>Méně vhodný jako klasický rytmický delay</li>
-      <li>Omezená hloubka pro pokročilé sound designéry</li>
+      <li data-i18n="con1">Vrstvy A/B nelze split/stack jako dva zcela samostatné zvuky</li>
+      <li data-i18n="con2">Instalace vyžaduje povinnou online registraci přes reFX Cloud</li>
+      <li data-i18n="con3">Chybí Linux verze a MIDI import/export pro patterny arpeggiátoru</li>
     </ul>
   </div>
 </div>
 
-<h2>Specifikace</h2>
+<h2 data-i18n="h-specs">Specifikace</h2>
 <table class="specs-table">
-<tr><td>Typ</td><td>Efektový plugin (VST/AU/AAX)</td></tr>
-<tr><td>Kategorie</td><td>Granulární delay / texturní efekt</td></tr>
-<tr><td>Platformy</td><td>Windows, macOS</td></tr>
+<tr><td data-i18n="spec1-k">Typ</td><td data-i18n="spec1-v">Softwarový hybridní syntezátor (VST3/AU/AAX)</td></tr>
+<tr><td data-i18n="spec2-k">Syntéza</td><td data-i18n="spec2-v">Modální (exciter/rezonátor) + virtuálně-analogová</td></tr>
+<tr><td data-i18n="spec3-k">Rezonátory</td><td data-i18n="spec3-v">12 typů, až 64 partialů, paralelní i sériové zapojení</td></tr>
+<tr><td data-i18n="spec4-k">Platformy</td><td data-i18n="spec4-v">macOS (Intel + Apple Silicon), Windows — bez Linuxu</td></tr>
+<tr><td data-i18n="spec5-k">Cena</td><td data-i18n="spec5-v">99 € (úvodní cena, běžně 129 €)</td></tr>
 </table>
 
-<h2>Verdikt</h2>
-<p>Rippler je skvělý nástroj přesně pro atmosférickou, ambientní produkci — přidá zvukům pohyb a hloubku, kterou klasický delay nezvládne. Pro čistě rytmické efekty je ale lepší sáhnout po konvenčnějším delay pluginu.</p>
+<h2 data-i18n="h-verdict">Verdikt</h2>
+<p data-i18n="p-verdict">Rippler je skvěle znějící objektově-modální syntezátor, který pro fanoušky Chromaphone 3 nabízí hlubší modulaci, více typů rezonátorů a navrch plnohodnotnou virtuálně-analogovou vrstvu. Není to klon — je to spíš duchovní nástupce, který se vydává i vlastním směrem díky hybridnímu konceptu a rozsáhlé efektové sekci. Pro fanoušky fyzikálního modelování a organických, akustických texturí patří k nejzajímavějším syntezátorům roku 2026.</p>
 
 </article>
 
-<a class="back-link" href="../index.html">← Zpět na přehled recenzí</a>
+<a class="back-link" href="../index.html" data-i18n="back">← Zpět na přehled recenzí</a>
 
-<footer>
+<footer data-i18n="footer">
   <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
 </footer>
 
 </main>
 
 <script src="../app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'kicker': 'Software synthesizer',
+    'hero-sub': 'A hybrid modal and virtual-analog synthesizer with Chromaphone DNA.',
+    'correction': "Editor's note: this review has been rewritten — Rippler is not a Baby Audio effects plugin, it's a standalone hybrid synthesizer from reFX (the makers of Nexus).",
+    'h-what': 'What Rippler is',
+    'p-what': "reFX Rippler grew out of RipplerX, an open-source project by Brazilian developer Tiago Ribeiro (Tilr) modeled on the modal synthesis of AAS's Chromaphone 3. After a deal with reFX — the makers of Nexus — the project was turned into a full commercial hybrid synthesizer in July 2026, with a significantly expanded feature set compared to the original open-source version.",
+    'h-sound': 'Sound and synthesis',
+    'p-sound': "Rippler combines modal synthesis (exciter + resonator) with classic subtractive virtual-analog synthesis across two layers, A and B, which can be layered but not split into two fully independent sounds the way Chromaphone 3 allows. Resonators are excited by an impulse-based exciter that can import your own sounds as impulses, a classic noise generator, or a direct audio input via sidechain — which lets Rippler double as an effects processor for resonating an external signal. There are 12 resonator types (4 more than Chromaphone 3) with up to 64 partials, routable in parallel or series, plus a manual mode for custom tuning.",
+    'h-workflow': 'Controls and workflow',
+    'p-workflow': "Each layer has two multimode filters (4 in total, with 27 types including comb and vowel filters), a rich modulation engine (envelopes, LFOs, random generators, MPE, macros) and a fully programmable arpeggiator/sequencer with up to 32 steps and an editor for custom patterns. The UI is based on the original open-source project, but reFX enlarged it, polished the visuals and made it clearer to use.",
+    'h-fx': 'Effects',
+    'p-fx': "Each layer, plus a global bus, has its own multi-FX with 12 effects — chorus, distortion, EQ, tremolo, a stereoizer and more — including a granular processor called Particle, a tape emulator called Magnetic, and a BBD-style bucket delay. Reverb offers a choice between the algorithmic RutaVerb (five colored modes with shimmer) for big ambient spaces, and the lighter MiniVerb for subtle polish without dominating the mix.",
+    'h-price': 'Installation and price',
+    'p-price': "Rippler installs through the reFX Cloud app with mandatory online registration — there's no offline install option. It runs as VST3, AU and AAX on macOS (Intel and Apple Silicon) and Windows; there's no standalone version and no Linux support, which the original open-source version did have. The introductory price is €99 instead of the regular €129, and a 30-day trial is available.",
+    'pros-h': 'Pros',
+    'pro1': 'Deep modal synthesis with 12 resonator types and custom impulse import',
+    'pro2': 'Hybrid pairing with a fully-featured virtual-analog layer',
+    'pro3': 'Rich modulation engine and a fully programmable arpeggiator/sequencer',
+    'pro4': 'Granular Particle processor and two quality reverbs',
+    'cons-h': 'Cons',
+    'con1': "Layers A/B can't be split/stacked as two fully independent sounds",
+    'con2': 'Installation requires mandatory online registration via reFX Cloud',
+    'con3': 'No Linux version and no MIDI import/export for arpeggiator patterns',
+    'h-specs': 'Specifications',
+    'spec1-k': 'Type', 'spec1-v': 'Hybrid software synthesizer (VST3/AU/AAX)',
+    'spec2-k': 'Synthesis', 'spec2-v': 'Modal (exciter/resonator) + virtual-analog',
+    'spec3-k': 'Resonators', 'spec3-v': '12 types, up to 64 partials, parallel or series routing',
+    'spec4-k': 'Platforms', 'spec4-v': 'macOS (Intel + Apple Silicon), Windows — no Linux',
+    'spec5-k': 'Price', 'spec5-v': '€99 (introductory price, regularly €129)',
+    'h-verdict': 'Verdict',
+    'p-verdict': "Rippler is a great-sounding object-modal synthesizer that gives Chromaphone 3 fans deeper modulation, more resonator types, and a fully-featured virtual-analog layer on top. It's not a clone — more of a spiritual successor that also carves its own path through its hybrid concept and extensive effects section. For fans of physical modeling and organic, acoustic-leaning textures, it's one of the more interesting synths of 2026.",
+    'back': '← Back to all reviews',
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'cs';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
 </body>
 </html>

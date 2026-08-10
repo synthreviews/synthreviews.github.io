@@ -15,12 +15,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16.png">
 
 <title>Recenze reFX Nexus 5 | Synth Verdict</title>
-<meta name="description" content="Recenze ROMpleru Nexus 5 — knihovna presetů, workflow, cena a verdikt.">
+<meta name="description" content="Recenze hybridního syntezátoru Nexus 5 — otevřený engine, knihovna presetů, workflow, cena a verdikt.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://example.com/reviews/nexus5.html">
+<link rel="canonical" href="https://synthreviews.github.io/reviews/nexus5.html">
 
 <meta property="og:title" content="Recenze reFX Nexus 5 — recenze | Synth Verdict">
-<meta property="og:description" content="Recenze ROMpleru Nexus 5 — knihovna presetů, workflow, cena a verdikt.">
+<meta property="og:description" content="Recenze Nexus 5 — otevřený hybridní engine, knihovna presetů, workflow, cena a verdikt.">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -47,6 +47,12 @@
   "author": { "@type": "Organization", "name": "Synth Verdict" }
 }
 </script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+</style>
 </head>
 <body data-sw-path="../sw.js">
 
@@ -58,77 +64,148 @@
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="../index.html">🏠 Domů</a>
-    <a href="omnisphere.html">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html">⚡ Nord Lead 4</a>
-    <a href="nexus5.html" class="active">🌌 Nexus 5</a>
-    <a href="rippler.html">🌊 Rippler</a>
-    <a href="xo-xo.html">🥁 XO-XO</a>
+    <a href="../index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" class="active" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
   </nav>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
 </header>
 
 <div class="hero-art">
-  <span class="kicker">ROMpler / plugin</span>
+  <span class="kicker" data-i18n="kicker">Hybridní syntezátor / plugin</span>
   <h1>reFX Nexus 5</h1>
-  <p style="color:var(--text-dim);">Rychlý ROMpler s obřím množstvím presetů pro pop, EDM a trap.</p>
+  <p style="color:var(--text-dim);" data-i18n="hero-sub">Z uzavřeného ROMpleru plně otevřený hybridní engine pro pop, EDM a trap.</p>
   <div class="verdict-score">⭐ 8.2 / 10 &nbsp;|&nbsp; ★★★★☆</div>
 </div>
 
 <article class="review">
 
-<h2>Co je Nexus 5</h2>
-<p>reFX Nexus je dlouhodobě jeden z nejpopulárnějších ROMplerů v pop, EDM a trap produkci díky obřím knihovnám hotových presetů a jednoduchému, přehlednému rozhraní. Nová generace přidává vylepšený modulační engine a rozšířenou knihovnu bank.</p>
+<h2 data-i18n="h-what">Co je Nexus 5</h2>
+<p data-i18n="p-what">reFX Nexus byl téměř dvě dekády uzavřeným ROMplerem — přehrávačem hotových presetů se zapečetěným enginem, který mohli upravovat jen interní sound designéři reFX. Verze 5, vydaná na Black Friday v listopadu 2024, tuto koncepci zásadně proměnila: reFX otevřeli architekturu naplno a dali uživatelům stejný přístup ke všem parametrům enginu, jaký dřív měli jen jejich vlastní sound designéři.</p>
 
-<h2>Zvuk</h2>
-<p>Síla Nexusu je v okamžité kvalitě zvuku "z krabice" — presety jsou mixáž-ready a dobře znějí i bez velkých úprav. Nová verze přidává hlubší modulační možnosti, díky kterým jde zvuk více personalizovat, aniž by uživatel musel stavět patch od nuly.</p>
+<h2 data-i18n="h-sound">Zvuk</h2>
+<p data-i18n="p-sound">Pod kapotou dnes běží osm generátorových enginů — virtuálně-analogový, wavetable, granulární, FM a další — ale cílem zůstává rychlý a hotový, mix-ready zvuk. Nexus 5 nově umí importovat vlastní samply, multisamply i celé knihovny a zpracovává zvuk s 64bitovou přesností. Mezi novými DSP moduly patří N2 Retro Mode (bit-crushing v duchu 80. let), Particle Reverb a vowel filtry.</p>
 
-<h2>Ovládání a workflow</h2>
-<p>Rozhraní je jednoduché a rychlé na procházení bank a presetů — ideální pro producenty, kteří chtějí rychle najít vhodný zvuk do skladby. Na hlubší sound design ale Nexus nebyl primárně navržen; v tom prohrává proti plně modulárním syntezátorům.</p>
+<h2 data-i18n="h-workflow">Ovládání a workflow</h2>
+<p data-i18n="p-workflow">I přes nově otevřený engine zůstává hlavní devízou rychlost — obrovská knihovna (přes 5000 presetů, doplněná o 1100+ zcela nových ve verzi 5) pokrývá EDM, trance, house, hip-hop i drum & bass a je plně zpětně kompatibilní se staršími projekty z Nexus 2 až 4, takže starší skladby půjde otevřít bez problémů i v nové verzi.</p>
 
-<h2>Cena a knihovny</h2>
-<p>Základní plugin je dostupný, ale plný potenciál se odemyká až s dokoupenými expanzními bankami, což celkovou cenu při větším sbírání bank zvyšuje.</p>
+<h2 data-i18n="h-price">Cena a knihovny</h2>
+<p data-i18n="p-price">Základní plugin zůstává cenově dostupný, ale plný potenciál se stále odemyká až s dokoupenými expanzními bankami, což celkovou cenu při větším sbírání bank zvyšuje.</p>
 
 <div class="pros-cons">
   <div class="pros">
-    <h4>Klady</h4>
+    <h4 data-i18n="pros-h">Klady</h4>
     <ul>
-      <li>Obrovská knihovna kvalitních presetů</li>
-      <li>Velmi rychlé procházení a hledání zvuku</li>
-      <li>Skvělé pro EDM, pop a trap produkci</li>
-      <li>Nízké nároky na výkon</li>
+      <li data-i18n="pro1">Nově plně otevřený engine s 8 typy syntézy</li>
+      <li data-i18n="pro2">Import vlastních samplů, multisamplů a wavetables</li>
+      <li data-i18n="pro3">Obrovská, stále rostoucí knihovna presetů (5000+)</li>
+      <li data-i18n="pro4">Zpětná kompatibilita se staršími verzemi Nexus</li>
     </ul>
   </div>
   <div class="cons">
-    <h4>Zápory</h4>
+    <h4 data-i18n="cons-h">Zápory</h4>
     <ul>
-      <li>Omezené možnosti hloubkového sound designu</li>
-      <li>Cena roste s dokupovanými bankami</li>
-      <li>Méně vhodný pro experimentální/ambientní tvorbu</li>
+      <li data-i18n="con1">Cena roste s dokupovanými expanzními bankami</li>
+      <li data-i18n="con2">I s otevřeným enginem je primárně navržen pro rychlý, presetový workflow</li>
+      <li data-i18n="con3">Hloubka sound designu nedosahuje specializovaných modulárních syntezátorů</li>
     </ul>
   </div>
 </div>
 
-<h2>Specifikace</h2>
+<h2 data-i18n="h-specs">Specifikace</h2>
 <table class="specs-table">
-<tr><td>Typ</td><td>ROMpler / softwarový plugin (VST/AU/AAX)</td></tr>
-<tr><td>Syntéza</td><td>Sample-based s modulačním enginem</td></tr>
-<tr><td>Knihovna</td><td>Rozšiřitelná o expanzní banky</td></tr>
-<tr><td>Platformy</td><td>Windows, macOS</td></tr>
+<tr><td data-i18n="spec1-k">Typ</td><td data-i18n="spec1-v">Hybridní syntezátor / ROMpler (VST/AU/AAX)</td></tr>
+<tr><td data-i18n="spec2-k">Syntéza</td><td data-i18n="spec2-v">8 enginů: VA, wavetable, granulární, FM a další</td></tr>
+<tr><td data-i18n="spec3-k">Knihovna</td><td data-i18n="spec3-v">5000+ presetů, rozšiřitelná o expanzní banky</td></tr>
+<tr><td data-i18n="spec4-k">Platformy</td><td data-i18n="spec4-v">Windows, macOS (nativně Apple Silicon)</td></tr>
 </table>
 
-<h2>Verdikt</h2>
-<p>Nexus 5 zůstává jedním z nejrychlejších způsobů, jak dostat profesionálně znějící zvuky do skladby. Pro hloubkový sound design sáhněte spíš po Omnisphere, ale pro rychlou, produkčně orientovanou práci je Nexus těžko k překonání.</p>
+<h2 data-i18n="h-verdict">Verdikt</h2>
+<p data-i18n="p-verdict">Nexus 5 zůstává jedním z nejrychlejších způsobů, jak dostat profesionálně znějící zvuk do skladby — a díky otevřenému enginu z verze 5 už dnes zvládne i skutečný sound design od nuly, ne jen úpravu hotových presetů. Pro maximální hloubku sáhněte spíš po Omnisphere, ale pro rychlou, produkčně orientovanou práci s možností jít do detailu, když je potřeba, patří Nexus 5 mezi jasné volby.</p>
 
 </article>
 
-<a class="back-link" href="../index.html">← Zpět na přehled recenzí</a>
+<a class="back-link" href="../index.html" data-i18n="back">← Zpět na přehled recenzí</a>
 
-<footer>
+<footer data-i18n="footer">
   <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
 </footer>
 
 </main>
 
 <script src="../app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'kicker': 'Hybrid synthesizer / plugin',
+    'hero-sub': 'From a closed ROMpler to a fully open hybrid engine for pop, EDM and trap.',
+    'h-what': 'What Nexus 5 is',
+    'p-what': "reFX's Nexus was a closed ROMpler for nearly two decades — a finished-preset playback instrument with a sealed engine only reFX's own sound designers could touch. Version 5, released on Black Friday in November 2024, changed that premise fundamentally: reFX fully opened the architecture and gave users the same access to every engine parameter their own sound designers used to have exclusively.",
+    'h-sound': 'Sound',
+    'p-sound': "Under the hood there are now eight generator engines — virtual-analog, wavetable, granular, FM and more — but the goal remains fast, finished, mix-ready sound. Nexus 5 can now import your own samples, multisamples and whole libraries, and processes audio with 64-bit precision. New DSP modules include N2 Retro Mode (80s-style bit-crushing), Particle Reverb and vowel filters.",
+    'h-workflow': 'Controls and workflow',
+    'p-workflow': "Even with the newly opened engine, speed remains the main selling point — a huge library (5,000+ presets, topped up with 1,100+ brand-new ones in version 5) covers EDM, trance, house, hip-hop and drum & bass, and is fully backward-compatible with older Nexus 2–4 projects, so older tracks open without issues in the new version.",
+    'h-price': 'Price and libraries',
+    'p-price': 'The base plugin remains affordably priced, but its full potential only unlocks once you add expansion banks, which raises the overall cost as you collect more of them.',
+    'pros-h': 'Pros',
+    'pro1': 'Newly, fully open engine with 8 synthesis types',
+    'pro2': 'Import your own samples, multisamples and wavetables',
+    'pro3': 'Huge, ever-growing preset library (5,000+)',
+    'pro4': 'Backward compatible with older Nexus versions',
+    'cons-h': 'Cons',
+    'con1': 'Price climbs as you add expansion banks',
+    'con2': 'Even with an open engine, it is still primarily designed for a fast, preset-driven workflow',
+    'con3': "Sound-design depth doesn't reach dedicated modular synths",
+    'h-specs': 'Specifications',
+    'spec1-k': 'Type', 'spec1-v': 'Hybrid synthesizer / ROMpler (VST/AU/AAX)',
+    'spec2-k': 'Synthesis', 'spec2-v': '8 engines: VA, wavetable, granular, FM and more',
+    'spec3-k': 'Library', 'spec3-v': '5,000+ presets, expandable with expansion banks',
+    'spec4-k': 'Platforms', 'spec4-v': 'Windows, macOS (native Apple Silicon)',
+    'h-verdict': 'Verdict',
+    'p-verdict': "Nexus 5 remains one of the fastest ways to get a professional-sounding patch into a track — and thanks to version 5's open engine it can now handle real sound design from scratch, not just tweaking finished presets. For maximum depth, reach for Omnisphere instead, but for fast, production-focused work with the option to dig deeper when needed, Nexus 5 is a clear choice.",
+    'back': '← Back to all reviews',
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'cs';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
 </body>
 </html>

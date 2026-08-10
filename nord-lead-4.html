@@ -15,9 +15,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16.png">
 
 <title>Recenze Nord Lead 4 | Synth Verdict</title>
-<meta name="description" content="Recenze hardwarového syntezátoru Nord Lead 4 — zvuk, ovládání, cena a verdikt.">
+<meta name="description" content="Recenze hardwarového syntezátoru Nord Lead 4 — zvuk, ovládání, 20hlasá polyfonie, cena a verdikt.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://example.com/reviews/nord-lead-4.html">
+<link rel="canonical" href="https://synthreviews.github.io/reviews/nord-lead-4.html">
 
 <meta property="og:title" content="Recenze Nord Lead 4 — recenze | Synth Verdict">
 <meta property="og:description" content="Recenze hardwarového syntezátoru Nord Lead 4 — zvuk, ovládání, cena a verdikt.">
@@ -47,6 +47,12 @@
   "author": { "@type": "Organization", "name": "Synth Verdict" }
 }
 </script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+</style>
 </head>
 <body data-sw-path="../sw.js">
 
@@ -58,78 +64,150 @@
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="../index.html">🏠 Domů</a>
-    <a href="omnisphere.html">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html" class="active">⚡ Nord Lead 4</a>
-    <a href="nexus5.html">🌌 Nexus 5</a>
-    <a href="rippler.html">🌊 Rippler</a>
-    <a href="xo-xo.html">🥁 XO-XO</a>
+    <a href="../index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" class="active" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
   </nav>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
 </header>
 
 <div class="hero-art">
-  <span class="kicker">Hardwarový syntezátor</span>
+  <span class="kicker" data-i18n="kicker">Hardwarový syntezátor</span>
   <h1>Nord Lead 4</h1>
-  <p style="color:var(--text-dim);">Virtuálně-analogová syntéza s okamžitým, fyzickým ovládáním.</p>
+  <p style="color:var(--text-dim);" data-i18n="hero-sub">Virtuálně-analogová syntéza s okamžitým, fyzickým ovládáním.</p>
   <div class="verdict-score">⭐ 8.6 / 10 &nbsp;|&nbsp; ★★★★☆</div>
 </div>
 
 <article class="review">
 
-<h2>Co je Nord Lead 4</h2>
-<p>Nord Lead 4 je virtuálně-analogový hardwarový syntezátor od švédské Clavia, pokračovatel řady, která definovala zvuk trance a electro house 90. a 2000. let. Klade důraz na okamžité, fyzické ovládání — každý důležitý parametr má vlastní knoflík nebo posuvník.</p>
+<h2 data-i18n="h-what">Co je Nord Lead 4</h2>
+<p data-i18n="p-what">Nord Lead 4 je virtuálně-analogový hardwarový syntezátor švédské Clavia, uvedený na trh v roce 2013 jako duchovní nástupce oblíbeného Nord Lead 2 spíše než přímý upgrade Nord Lead 3. Dnes už jde o starší, ale stále ceněný model — v aktuální nabídce Clavia jej mezitím doplnil novější Nord Lead A1, takže Lead 4 dnes funguje spíš jako moderní klasik než jako aktuální vlajková loď řady.</p>
 
-<h2>Zvuk</h2>
-<p>Virtuálně-analogová syntéza dává čistý, agresivní a dobře definovaný zvuk — vynikající pro leady, plochy i basy s výrazným charakterem. Oscilátory nabízí klasické tvary vln i FM a formantovou syntézu, takže rozsah jde od hebkých analogových ploch po ostré digitální textury.</p>
+<h2 data-i18n="h-sound">Zvuk</h2>
+<p data-i18n="p-sound">Každý hlas má dva oscilátory: OSC1 nabízí klasické analogové vlnové tvary i 128 digitálních wavetables včetně formantových vln, OSC2 přidává analogové tvary, filtrovaný šum a rozladění pro bohatší texturu. Nové ladder filtry odvozené z klasických analogových syntezátorů — 12, 24 a 48dB low-pass, plus high-pass a band-pass — dodávají zvuku čistotu i výrazný charakter, vynikající zejména na leadech, plochách a basech.</p>
 
-<h2>Ovládání a workflow</h2>
-<p>Tady Nord Lead exceluje — žádné menu diving, žádné vrstvené obrazovky. Chcete-li upravit filtr nebo obálku, prostě sáhnete na knoflík. Pro živé hraní a rychlé skládání zvuku za pochodu je to jeden z nejrychlejších syntezátorů na trhu.</p>
+<h2 data-i18n="h-workflow">Ovládání a workflow</h2>
+<p data-i18n="p-workflow">Tady Nord Lead exceluje — žádné menu diving, žádné vrstvené obrazovky. Chcete-li upravit filtr nebo obálku, prostě sáhnete na knoflík. Nástroj nabízí 20hlasou polyfonii rozdělenou do 4 nezávislých multitimbrálních částí, každá s vlastní efektovou sekcí (reverb, delay, kompresor) a přiřaditelným výstupem — ideální pro živé hraní i rychlé skládání zvuku za pochodu.</p>
 
-<h2>Cena a hodnota</h2>
-<p>Jde o prémiový hardware s odpovídající cenou. Ve srovnání se softwarovými alternativami je to výrazně dražší řešení, ale nabízí fyzické ovládání a specifický "Nord" zvuk, který mnoho produkčních softwarových emulací plně nenahradí.</p>
+<h2 data-i18n="h-price">Cena a dostupnost</h2>
+<p data-i18n="p-price">Jde o prémiový hardware — v závislosti na verzi (klávesová nebo rackový modul 4R) se ceny nových i použitých kusů pohybují zhruba v řádu 1500 až 1700 USD. Protože se jedná o starší model z roku 2013, nový kus se dnes shání obtížněji a běžně je k mání jako skladová zásoba nebo z bazaru; ve srovnání se softwarovými alternativami jde stále o výrazně dražší řešení, ale nabízí fyzické ovládání a specifický "Nord" zvuk, který produkční software plně nenahradí.</p>
 
 <div class="pros-cons">
   <div class="pros">
-    <h4>Klady</h4>
+    <h4 data-i18n="pros-h">Klady</h4>
     <ul>
-      <li>Okamžité ovládání, žádné menu diving</li>
-      <li>Charakteristický, čistý virtuálně-analogový zvuk</li>
-      <li>Robustní hardware, vhodný pro živé hraní</li>
-      <li>Rychlý sound design workflow</li>
+      <li data-i18n="pro1">Okamžité ovládání, žádné menu diving</li>
+      <li data-i18n="pro2">20hlasá polyfonie rozdělená do 4 multitimbrálních částí</li>
+      <li data-i18n="pro3">Nové ladder filtry (12/24/48 dB) s charakteristickým zvukem</li>
+      <li data-i18n="pro4">Robustní kovová konstrukce, USB MIDI, vhodný pro živé hraní</li>
     </ul>
   </div>
   <div class="cons">
-    <h4>Zápory</h4>
+    <h4 data-i18n="cons-h">Zápory</h4>
     <ul>
-      <li>Vysoká cena za omezenou polyfonii</li>
-      <li>Menší úložiště presetů než konkurence</li>
-      <li>Chybí pokročilejší modulační matice</li>
+      <li data-i18n="con1">Model z roku 2013 — dnes moderní klasik, ne aktuální vlajková loď řady</li>
+      <li data-i18n="con2">Vyšší cena a obtížnější dostupnost nového kusu</li>
+      <li data-i18n="con3">Chybí pokročilejší modulační matice ve srovnání s konkurencí</li>
     </ul>
   </div>
 </div>
 
-<h2>Specifikace</h2>
+<h2 data-i18n="h-specs">Specifikace</h2>
 <table class="specs-table">
-<tr><td>Typ</td><td>Hardwarový syntezátor</td></tr>
-<tr><td>Syntéza</td><td>Virtuálně-analogová</td></tr>
-<tr><td>Klávesnice</td><td>49/61 kláves (dle verze)</td></tr>
-<tr><td>Polyfonie</td><td>Omezená, ale dostatečná pro live use</td></tr>
-<tr><td>Efekty</td><td>Vestavěné modulační a prostorové efekty</td></tr>
+<tr><td data-i18n="spec1-k">Typ</td><td data-i18n="spec1-v">Hardwarový syntezátor (2013), klávesová i rack (4R) verze</td></tr>
+<tr><td data-i18n="spec2-k">Syntéza</td><td data-i18n="spec2-v">Virtuálně-analogová, 2 oscilátory na hlas</td></tr>
+<tr><td data-i18n="spec3-k">Klávesnice</td><td data-i18n="spec3-v">49 kláves, synth-action (u klávesové verze)</td></tr>
+<tr><td data-i18n="spec4-k">Polyfonie</td><td data-i18n="spec4-v">20 hlasů, 4 nezávislé multitimbrální části</td></tr>
+<tr><td data-i18n="spec5-k">Filtry</td><td data-i18n="spec5-v">Ladder 12/24/48 dB low-pass + high-pass/band-pass</td></tr>
 </table>
 
-<h2>Verdikt</h2>
-<p>Nord Lead 4 je ideální pro producenty a hráče, kteří chtějí rychlý, hmatatelný sound design bez počítače. Není to nejlevnější ani nejflexibilnější volba, ale patří k nejpříjemnějším syntezátorům na ovládání.</p>
+<h2 data-i18n="h-verdict">Verdikt</h2>
+<p data-i18n="p-verdict">Nord Lead 4 je ideální pro producenty a hráče, kteří chtějí rychlý, hmatatelný sound design bez počítače. Není to nejlevnější ani nejnovější volba — od uvedení v roce 2013 jej v aktuální nabídce doplnil Nord Lead A1 — ale díky 20hlasé polyfonii, čtyřem multitimbrálním částem a okamžitému ovládání patří stále k nejpříjemnějším syntezátorům na trhu.</p>
 
 </article>
 
-<a class="back-link" href="../index.html">← Zpět na přehled recenzí</a>
+<a class="back-link" href="../index.html" data-i18n="back">← Zpět na přehled recenzí</a>
 
-<footer>
+<footer data-i18n="footer">
   <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
 </footer>
 
 </main>
 
 <script src="../app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'kicker': 'Hardware synthesizer',
+    'hero-sub': 'Virtual-analog synthesis with legendary hands-on control.',
+    'h-what': 'What Nord Lead 4 is',
+    'p-what': "The Nord Lead 4 is a virtual-analog hardware synthesizer from Sweden's Clavia, launched in 2013 as a spiritual successor to the beloved Nord Lead 2 rather than a direct upgrade of the Nord Lead 3. It's now an older but still highly regarded model — Clavia's current lineup has since added the newer Nord Lead A1, so today the Lead 4 works more as a modern classic than the range's current flagship.",
+    'h-sound': 'Sound',
+    'p-sound': 'Each voice has two oscillators: OSC1 offers classic analog waveforms plus 128 digital wavetables including formant waves, while OSC2 adds analog shapes, filtered noise and detuning for a richer texture. New ladder filters derived from classic analog synths — 12, 24 and 48dB low-pass, plus high-pass and band-pass — give the sound both clarity and real character, especially on leads, pads and basses.',
+    'h-workflow': 'Controls and workflow',
+    'p-workflow': "This is where the Nord Lead excels — no menu diving, no layered screens. Want to tweak a filter or envelope? Just reach for the knob. The instrument offers 20-voice polyphony split across 4 independent multitimbral parts, each with its own effects section (reverb, delay, compressor) and assignable output — ideal for live playing and fast on-the-fly sound design alike.",
+    'h-price': 'Price and availability',
+    'p-price': "This is premium hardware — depending on the version (keyboard or the 4R rack module), new and used prices run roughly in the $1,500–1,700 range. Since it's an older 2013 model, a brand-new unit is harder to find today and is usually available as old stock or secondhand; compared to software alternatives it remains a significantly pricier option, but it offers hands-on physical control and a distinctive 'Nord' sound that production software doesn't fully replace.",
+    'pros-h': 'Pros',
+    'pro1': 'Instant hands-on control, no menu diving',
+    'pro2': '20-voice polyphony split across 4 multitimbral parts',
+    'pro3': 'New ladder filters (12/24/48 dB) with distinctive character',
+    'pro4': 'Rugged metal build, USB MIDI, great for live use',
+    'cons-h': 'Cons',
+    'con1': "A 2013 model — a modern classic today, not the range's current flagship",
+    'con2': 'Higher price and a new unit is harder to find',
+    'con3': 'Lacks the more advanced mod matrix found in some rivals',
+    'h-specs': 'Specifications',
+    'spec1-k': 'Type', 'spec1-v': 'Hardware synthesizer (2013), keyboard and rack (4R) versions',
+    'spec2-k': 'Synthesis', 'spec2-v': 'Virtual-analog, 2 oscillators per voice',
+    'spec3-k': 'Keyboard', 'spec3-v': '49 keys, synth-action (keyboard version)',
+    'spec4-k': 'Polyphony', 'spec4-v': '20 voices, 4 independent multitimbral parts',
+    'spec5-k': 'Filters', 'spec5-v': 'Ladder 12/24/48 dB low-pass + high-pass/band-pass',
+    'h-verdict': 'Verdict',
+    'p-verdict': "The Nord Lead 4 is ideal for producers and players who want fast, tactile sound design without a computer. It's not the cheapest or newest option — the Nord Lead A1 has since joined the current lineup — but with 20-voice polyphony, four multitimbral parts and instant hands-on control, it's still one of the most enjoyable synths to play on the market.",
+    'back': '← Back to all reviews',
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'cs';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
 </body>
 </html>

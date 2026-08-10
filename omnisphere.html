@@ -14,13 +14,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16.png">
 
-<title>Recenze Spectrasonics Omnisphere 2.8 | Synth Verdict</title>
-<meta name="description" content="Podrobná recenze Omnisphere 2.8 — granulární syntéza, obří knihovna, cena a verdikt.">
+<title>Recenze Spectrasonics Omnisphere 3 | Synth Verdict</title>
+<meta name="description" content="Recenze Omnisphere 3 — 18 nových zvukových knihoven, granulární syntéza, hardwarová integrace, cena a verdikt.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://example.com/reviews/omnisphere.html">
+<link rel="canonical" href="https://synthreviews.github.io/reviews/omnisphere.html">
 
-<meta property="og:title" content="Recenze Spectrasonics Omnisphere 2.8 — recenze | Synth Verdict">
-<meta property="og:description" content="Podrobná recenze Omnisphere 2.8 — granulární syntéza, obří knihovna, cena a verdikt.">
+<meta property="og:title" content="Recenze Spectrasonics Omnisphere 3 — recenze | Synth Verdict">
+<meta property="og:description" content="Podrobná recenze Omnisphere 3 — granulární syntéza, obří knihovna, hardwarová integrace, cena a verdikt.">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -36,7 +36,7 @@
   "@type": "Review",
   "itemReviewed": {
     "@type": "Product",
-    "name": "Spectrasonics Omnisphere 2.8",
+    "name": "Spectrasonics Omnisphere 3",
     "brand": "Spectrasonics"
   },
   "reviewRating": {
@@ -47,6 +47,12 @@
   "author": { "@type": "Organization", "name": "Synth Verdict" }
 }
 </script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+</style>
 </head>
 <body data-sw-path="../sw.js">
 
@@ -58,78 +64,160 @@
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="../index.html">🏠 Domů</a>
-    <a href="omnisphere.html" class="active">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html">⚡ Nord Lead 4</a>
-    <a href="nexus5.html">🌌 Nexus 5</a>
-    <a href="rippler.html">🌊 Rippler</a>
-    <a href="xo-xo.html">🥁 XO-XO</a>
+    <a href="../index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="omnisphere.html" class="active" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
   </nav>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
 </header>
 
 <div class="hero-art">
-  <span class="kicker">Softwarový syntezátor</span>
-  <h1>Spectrasonics Omnisphere 2.8</h1>
-  <p style="color:var(--text-dim);">Referenční zvukový engine pro ambient, film a sound design.</p>
+  <span class="kicker" data-i18n="kicker">Softwarový syntezátor</span>
+  <h1>Spectrasonics Omnisphere 3</h1>
+  <p style="color:var(--text-dim);" data-i18n="hero-sub">Vlajkový zvukový engine pro ambient, film a sound design.</p>
   <div class="verdict-score">⭐ 9.4 / 10 &nbsp;|&nbsp; ★★★★★</div>
 </div>
 
 <article class="review">
 
-<h2>Co je Omnisphere</h2>
-<p>Omnisphere od Spectrasonics je softwarový syntezátor, který kombinuje sample-based zvuky s pokročilou granulární syntézou. Aktuální verze 2.8 přidala plnou integraci s Keyscape a rozšířený granulární engine, takže z jednoho pluginu jde postavit skoro cokoliv — od organických plošných pad zvuků přes agresivní basy až po experimentální texturní design.</p>
+<h2 data-i18n="h-what">Co je Omnisphere</h2>
+<p data-i18n="p-what">Omnisphere 3 je vlajkový softwarový syntezátor Spectrasonics, který spojuje sample-based zvuky s granulární syntézou, wavetables a FM/ring modulací do jednoho enginu. Aktuální verze 3 přinesla kompletně novou, kurátorovanou továrenskou knihovnu s 18 zvukovými knihovnami a tisíci nových zvuků, remasterované klasické patche z předchozích verzí a nově i samostatný bonusový plugin Omnisphere FX Rack, který lze použít přímo v DAW.</p>
 
-<h2>Zvuk</h2>
-<p>Zvukový engine je pořád referenční. Knihovna obsahuje tisíce zdrojových vzorků a syntetických vln, které lze míchat, granulárně rozkládat a modulovat v reálném čase. Pro ambientní a filmovou tvorbu je granulární syntéza obzvlášť silná — umožňuje vytvářet pomalu se vyvíjející, "živé" plochy, které nezní staticky ani po několika minutách.</p>
+<h2 data-i18n="h-sound">Zvuk</h2>
+<p data-i18n="p-sound">Engine staví na čtyřvrstvé architektuře (Harmonia dokáže přidat až 4 další oscilátory na vrstvu), nabízí přes 600 DSP vlnových tvarů fungujících jako morphing wavetables, granulární syntézu i nový modul Quadzone pro dramatický timbrální pohyb. Dual Frequency Shifter a Oscillator Drift přidávají polyfonní frequency shifting a vintage analogovou nestabilitu. Filtrová sekce nabízí 69 typů filtrů (36 zcela nových) s modelovanou saturací obvodů pro teplé analogové zabarvení.</p>
 
-<h2>Ovládání a workflow</h2>
-<p>Rozhraní je hutné — dva syntézní enginy (A/B), vlastní modulační matice, arpeggiátor a efektová sekce. Pro nováčky je to zpočátku hodně informací najednou, ale díky prohledávatelné knihovně presetů (podle nálady, žánru, typu zvuku) se dá rychle najít startovní bod a pak ho jen upravovat.</p>
+<h2 data-i18n="h-workflow">Ovládání a workflow</h2>
+<p data-i18n="p-workflow">Nové Adaptive Global Controls (Tone, Ambience, Filter, Envelope, Vibrato, Unison) umožňují rychle upravit charakter jakéhokoli patche, aniž byste museli rozumět celému enginu — automaticky analyzují zvolený zvuk a chovají se hudebně na jakémkoli patchi. Funkce Patch Mutations umí jedním klikem vygenerovat zajímavé varianty aktuálního zvuku, od jemných po extrémní. Přepracovaný Full Browser se stromovou strukturou a podkategoriemi usnadňuje orientaci v rozsáhlé knihovně.</p>
 
-<h2>Cena a licencování</h2>
-<p>Omnisphere patří k dražším softwarovým syntezátorům na trhu. Cena odpovídá rozsahu knihovny a enginu, ale je to jednorázová investice bez předplatného — pro producenty, kteří zvuk používají dlouhodobě, se to obvykle vyplatí.</p>
+<h2 data-i18n="h-hw">Hardwarová integrace</h2>
+<p data-i18n="p-hw">Funkce Hardware Integration byla ve verzi 3 rozšířena na přes 300 profilů pro hardwarové syntezátory a MIDI kontroléry od všech větších výrobců (Moog, Sequential, Roland, Korg, Nord, Novation, Arturia a další), takže lze Omnisphere ovládat naživo přímo z hardwaru bez ručního mapování.</p>
+
+<h2 data-i18n="h-fx">Efekty</h2>
+<p data-i18n="p-fx">Omnisphere 3 obsahuje 93 efektových jednotek (35 zcela nových) v kategoriích reverb, delay, kreativní efekty, modulace, dynamika, barva zvuku, EQ a distorze. Každá vrstva má vlastní FX rack, k dispozici je i sběrný Aux rack a finální Common/Mastering rack pro celý patch nebo multi.</p>
+
+<h2 data-i18n="h-price">Cena a licencování</h2>
+<p data-i18n="p-price">Omnisphere patří k dražším softwarovým syntezátorům na trhu, jde ale o jednorázový nákup bez předplatného — majitelé Omnisphere 1 nebo 2 mají k dispozici zvýhodněný upgrade. Instalace vyžaduje zhruba 64 GB volného místa na disku a alespoň 8 GB RAM (doporučeno 16 GB a více).</p>
 
 <div class="pros-cons">
   <div class="pros">
-    <h4>Klady</h4>
+    <h4 data-i18n="pros-h">Klady</h4>
     <ul>
-      <li>Obrovská a kvalitní zvuková knihovna</li>
-      <li>Granulární syntéza na profesionální úrovni</li>
-      <li>Vynikající pro ambient, film a sound design</li>
-      <li>Pravidelné aktualizace bez předplatného</li>
+      <li data-i18n="pro1">Obrovská, kurátorovaná knihovna — 18 zvukových knihoven a tisíce nových zvuků</li>
+      <li data-i18n="pro2">Granulární, wavetable i FM/ring modulační syntéza v jednom enginu</li>
+      <li data-i18n="pro3">Přes 300 profilů pro přímou hardwarovou integraci</li>
+      <li data-i18n="pro4">Jednorázová licence bez předplatného, s upgrade cestou z O1/O2</li>
     </ul>
   </div>
   <div class="cons">
-    <h4>Zápory</h4>
+    <h4 data-i18n="cons-h">Zápory</h4>
     <ul>
-      <li>Vysoká pořizovací cena</li>
-      <li>Strmější křivka učení</li>
-      <li>Náročnější na výkon CPU při větší polyfonii</li>
+      <li data-i18n="con1">Vysoká pořizovací cena</li>
+      <li data-i18n="con2">Strmější křivka učení kvůli rozsahu enginu</li>
+      <li data-i18n="con3">Vysoké nároky na úložiště (cca 64 GB)</li>
     </ul>
   </div>
 </div>
 
-<h2>Specifikace</h2>
+<h2 data-i18n="h-specs">Specifikace</h2>
 <table class="specs-table">
-<tr><td>Typ</td><td>Softwarový syntezátor (VST/AU/AAX)</td></tr>
-<tr><td>Syntéza</td><td>Sample-based + granulární</td></tr>
-<tr><td>Knihovna</td><td>Tisíce presetů a zdrojových zvuků</td></tr>
-<tr><td>Platformy</td><td>Windows, macOS</td></tr>
-<tr><td>Licence</td><td>Jednorázový nákup</td></tr>
+<tr><td data-i18n="spec1-k">Typ</td><td data-i18n="spec1-v">Softwarový syntezátor (VST/AU/AAX + samostatná aplikace)</td></tr>
+<tr><td data-i18n="spec2-k">Syntéza</td><td data-i18n="spec2-v">Sample-based, granulární, wavetable, FM/ring modulace</td></tr>
+<tr><td data-i18n="spec3-k">Knihovna</td><td data-i18n="spec3-v">18 továrenských knihoven, tisíce zvuků a patchů</td></tr>
+<tr><td data-i18n="spec4-k">Platformy</td><td data-i18n="spec4-v">macOS 13+, Windows 10+ (Intel i Apple Silicon nativně)</td></tr>
+<tr><td data-i18n="spec5-k">Licence</td><td data-i18n="spec5-v">Jednorázový nákup, upgrade z Omnisphere 1/2 dostupný</td></tr>
 </table>
 
-<h2>Verdikt</h2>
-<p>Omnisphere je stále jedním z nejvšestrannějších syntezátorů na trhu. Pro ambient, chillout a filmovou hudbu patří mezi absolutní špičku — vyšší cena je vyvážená rozsahem a životností nástroje.</p>
+<h2 data-i18n="h-verdict">Verdikt</h2>
+<p data-i18n="p-verdict">Omnisphere 3 zůstává jedním z nejvšestrannějších syntezátorů na trhu — nová knihovna, rozšířená hardwarová integrace a přepracovaná efektová sekce posouvají už tak referenční nástroj zase o kus dál. Pro ambient, chillout a filmovou hudbu patří mezi absolutní špičku; vyšší cena je vyvážená rozsahem a dlouhověkostí nástroje.</p>
 
 </article>
 
-<a class="back-link" href="../index.html">← Zpět na přehled recenzí</a>
+<a class="back-link" href="../index.html" data-i18n="back">← Zpět na přehled recenzí</a>
 
-<footer>
+<footer data-i18n="footer">
   <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
 </footer>
 
 </main>
 
 <script src="../app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'kicker': 'Software synthesizer',
+    'hero-sub': 'The flagship sound engine for ambient, film and sound design.',
+    'h-what': 'What Omnisphere is',
+    'p-what': "Omnisphere 3 is Spectrasonics' flagship software synthesizer, combining sample-based sounds with granular synthesis, wavetables and FM/ring modulation in one engine. Version 3 brought a completely new, curated factory library with 18 sound libraries and thousands of new sounds, remastered classic patches from earlier versions, and a new standalone bonus plugin, Omnisphere FX Rack, usable directly in your DAW.",
+    'h-sound': 'Sound',
+    'p-sound': "The engine is built on a four-layer architecture (Harmonia can add up to 4 extra oscillators per layer), with over 600 DSP waveforms acting as morphing wavetables, granular synthesis, and a new Quadzone module for dramatic timbral movement. A Dual Frequency Shifter and Oscillator Drift add polyphonic frequency shifting and vintage analog instability. The filter section now offers 69 filter types (36 brand new) with circuit-modeled saturation for warm analog coloration.",
+    'h-workflow': 'Controls and workflow',
+    'p-workflow': "New Adaptive Global Controls (Tone, Ambience, Filter, Envelope, Vibrato, Unison) let you quickly reshape any patch without needing to understand the whole engine — they auto-analyze the selected sound and stay musical on any patch. Patch Mutations can generate interesting variations of the current sound with one click, from subtle to extreme. A redesigned Full Browser with a directory tree and sub-categories makes it easier to navigate the huge library.",
+    'h-hw': 'Hardware integration',
+    'p-hw': "The Hardware Integration feature was expanded in version 3 to over 300 profiles for hardware synthesizers and MIDI controllers from every major manufacturer (Moog, Sequential, Roland, Korg, Nord, Novation, Arturia and more), giving hands-on control of Omnisphere straight from your hardware with no manual mapping.",
+    'h-fx': 'Effects',
+    'p-fx': 'Omnisphere 3 includes 93 effects units (35 brand new) across reverb, delay, creative, modulation, dynamics, color, EQ and distortion categories. Each layer has its own FX rack, plus an Aux rack and a final Common/Mastering rack for the whole patch or multi.',
+    'h-price': 'Price and licensing',
+    'p-price': "Omnisphere is one of the pricier software synths on the market, but it's a one-time purchase with no subscription — owners of Omnisphere 1 or 2 get a discounted upgrade path. Installation needs roughly 64GB of free disk space and at least 8GB of RAM (16GB+ recommended).",
+    'pros-h': 'Pros',
+    'pro1': 'Huge, curated library — 18 sound libraries and thousands of new sounds',
+    'pro2': 'Granular, wavetable and FM/ring-mod synthesis in one engine',
+    'pro3': 'Over 300 profiles for direct hardware integration',
+    'pro4': 'One-time license with no subscription, plus an upgrade path from O1/O2',
+    'cons-h': 'Cons',
+    'con1': 'High purchase price',
+    'con2': 'Steeper learning curve given the scope of the engine',
+    'con3': 'High storage requirements (~64GB)',
+    'h-specs': 'Specifications',
+    'spec1-k': 'Type', 'spec1-v': 'Software synthesizer (VST/AU/AAX + standalone app)',
+    'spec2-k': 'Synthesis', 'spec2-v': 'Sample-based, granular, wavetable, FM/ring modulation',
+    'spec3-k': 'Library', 'spec3-v': '18 factory libraries, thousands of sounds and patches',
+    'spec4-k': 'Platforms', 'spec4-v': 'macOS 13+, Windows 10+ (native Intel and Apple Silicon)',
+    'spec5-k': 'License', 'spec5-v': 'One-time purchase, upgrade available from Omnisphere 1/2',
+    'h-verdict': 'Verdict',
+    'p-verdict': "Omnisphere 3 remains one of the most versatile synthesizers on the market — the new library, expanded hardware integration and reworked effects section push an already-reference instrument further still. For ambient, chillout and film music it's near the very top; the higher price is offset by the instrument's scope and longevity.",
+    'back': '← Back to all reviews',
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'cs';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
 </body>
 </html>
