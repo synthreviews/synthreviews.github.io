@@ -46,6 +46,12 @@
 .lang-toggle-wrap{display:flex;justify-content:center;margin:14px 0 4px;}
 .lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
 .lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+.synthlucida-note{font-size:0.85rem;color:var(--text-dim,rgba(255,255,255,0.65));margin:10px auto 0;max-width:520px;line-height:1.5;}
+.synthlucida-note a{color:#7dd3fc;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(125,211,252,0.4);}
+.synthlucida-note a:hover{border-bottom-color:#7dd3fc;}
+.footer-synthlucida{margin-top:10px;font-size:0.85rem;}
+.footer-synthlucida a{color:#7dd3fc;text-decoration:none;font-weight:600;}
+.footer-synthlucida a:hover{text-decoration:underline;}
 </style>
 </head>
 <body data-sw-path="./sw.js">
@@ -66,13 +72,15 @@
 <header class="site-header">
   <h1 class="brand">SYNTH VERDICT</h1>
   <p class="tagline" data-i18n="tagline">Nezávislé recenze syntezátorů a hudebních pluginů — zvuk, workflow, cena, verdikt.</p>
+  <p class="synthlucida-note" data-i18n="synthlucida-note">🎧 Synth Verdict je vedlejší projekt hudebního producenta <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — poslechněte si jeho ambientní a chillout elektronickou hudbu.</p>
   <nav class="nav-links" aria-label="Hlavní navigace">
     <a href="index.html" class="active" data-i18n="nav-home">🏠 Domů</a>
-    <a href="reviews/omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
-    <a href="reviews/nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
-    <a href="reviews/nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
-    <a href="reviews/rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
-    <a href="reviews/xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
+    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
+    <a href="life.html" data-i18n="nav-life">🎵 Life</a>
   </nav>
   <div class="lang-toggle-wrap">
     <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
@@ -83,39 +91,46 @@
 
 <div class="grid">
 
-  <a class="card" href="reviews/omnisphere.html">
+  <a class="card" href="omnisphere.html">
     <span class="kicker" data-i18n="card-omni-kicker">Softwarový syntezátor</span>
     <h3 data-i18n="card-omni-title">Spectrasonics Omnisphere 3</h3>
     <p data-i18n="card-omni-desc">Vlajkový zvukový engine Spectrasonics s 18 novými zvukovými knihovnami, granulární i wavetable syntézou a přes 300 profily pro hardwarovou integraci.</p>
     <div class="meta"><span class="stars">★★★★★</span><span>9.4 / 10</span></div>
   </a>
 
-  <a class="card" href="reviews/nord-lead-4.html">
+  <a class="card" href="nord-lead-4.html">
     <span class="kicker" data-i18n="card-nord-kicker">Hardwarový syntezátor</span>
     <h3 data-i18n="card-nord-title">Nord Lead 4</h3>
     <p data-i18n="card-nord-desc">Virtuálně-analogová syntéza s legendárním okamžitým ovládáním. Dnes už modernímu klasikovi z roku 2013 s 20hlasou polyfonií.</p>
     <div class="meta"><span class="stars">★★★★☆</span><span>8.6 / 10</span></div>
   </a>
 
-  <a class="card" href="reviews/nexus5.html">
+  <a class="card" href="nexus5.html">
     <span class="kicker" data-i18n="card-nexus-kicker">Hybridní syntezátor / plugin</span>
     <h3 data-i18n="card-nexus-title">reFX Nexus 5</h3>
     <p data-i18n="card-nexus-desc">Z uzavřeného ROMpleru plně otevřený hybridní engine s 8 typy syntézy, importem vlastních samplů a obří knihovnou presetů pro pop, EDM a trap.</p>
     <div class="meta"><span class="stars">★★★★☆</span><span>8.2 / 10</span></div>
   </a>
 
-  <a class="card" href="reviews/rippler.html">
+  <a class="card" href="rippler.html">
     <span class="kicker" data-i18n="card-rippler-kicker">Softwarový syntezátor</span>
     <h3 data-i18n="card-rippler-title">reFX Rippler</h3>
     <p data-i18n="card-rippler-desc">Hybridní modální a virtuálně-analogový syntezátor s DNA Chromaphone — vznikl z open-source projektu RipplerX a v roce 2026 jej dotáhla reFX.</p>
     <div class="meta"><span class="stars">★★★★☆</span><span>8.5 / 10</span></div>
   </a>
 
-  <a class="card" href="reviews/xo-xo.html">
+  <a class="card" href="xo-xo.html">
     <span class="kicker" data-i18n="card-xo-kicker">Bicí / sample plugin</span>
     <h3 data-i18n="card-xo-title">XLN Audio XO</h3>
     <p data-i18n="card-xo-desc">Vizuální bicí sampler s přes 8700 samply, 240+ beat presety a chytrým vyhledáváním zvuku podle podobnosti.</p>
     <div class="meta"><span class="stars">★★★★½</span><span>8.9 / 10</span></div>
+  </a>
+
+  <a class="card" href="life.html">
+    <span class="kicker" data-i18n="card-life-kicker">Sampler / generátor beatů</span>
+    <h3 data-i18n="card-life-title">XLN Audio Life</h3>
+    <p data-i18n="card-life-desc">AI sampler, který z vlastních nahrávek — kapající kohoutek, praskající zesilovač — během vteřin vygeneruje kompletní beat s nekonečnými variacemi.</p>
+    <div class="meta"><span class="stars">★★★★☆</span><span>8.3 / 10</span></div>
   </a>
 
 </div>
@@ -125,8 +140,9 @@
   <p data-i18n="about-text">Synth Verdict testuje syntezátory a produkční pluginy z pohledu praktického použití ve skladbách — ne jen podle specifikací. Každá recenze obsahuje hodnocení zvuku, workflow, stability a poměru cena/výkon, plus jasné plusy a mínusy. Fakta v recenzích průběžně ověřujeme podle oficiálních stránek výrobců.</p>
 </article>
 
-<footer data-i18n="footer">
-© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.
+<footer>
+<span data-i18n="footer">© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</span>
+<div class="footer-synthlucida" data-i18n="footer-synthlucida">🎧 Od stejného tvůrce: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambientní a chillout elektronická hudba.</div>
 </footer>
 
 </main>
@@ -145,6 +161,8 @@
     'nav-nexus': '🌌 Nexus 5',
     'nav-rippler': '🎛️ Rippler',
     'nav-xo': '🥁 XO-XO',
+    'nav-life': '🎵 Life',
+    'synthlucida-note': '🎧 Synth Verdict is a side project by electronic music producer <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — check out his ambient and chillout electronic music.',
     'latest-title': 'Latest <span>reviews</span>',
     'card-omni-kicker': 'Software synthesizer',
     'card-omni-title': 'Spectrasonics Omnisphere 3',
@@ -161,17 +179,21 @@
     'card-xo-kicker': 'Drum / sample plugin',
     'card-xo-title': 'XLN Audio XO',
     'card-xo-desc': 'A visual drum sampler with 8,700+ samples, 240+ beat presets and smart similarity-based sound search.',
+    'card-life-kicker': 'Sampler / beat generator',
+    'card-life-title': 'XLN Audio Life',
+    'card-life-desc': 'An AI sampler that turns your own recordings — a dripping faucet, a crackling amp — into a complete beat within seconds, with endless variations.',
     'about-title': 'About <span>this site</span>',
     'about-text': "Synth Verdict tests synthesizers and production plugins from a practical, in-the-mix perspective — not just by spec sheet. Every review covers sound, workflow, stability and value for money, plus clear pros and cons. We periodically re-check the facts in our reviews against manufacturers' official pages.",
-    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.',
+    'footer-synthlucida': '🎧 From the same creator: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambient and chillout electronic music.'
   };
   var originalHTML = {};
   function initLang(){
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
     });
-    var saved = 'cs';
-    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    var saved = 'en';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'en'; } catch (e) {}
     if (saved === 'en') setLang('en');
   }
   function setLang(lang){

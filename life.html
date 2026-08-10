@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#05123a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Synth Verdict">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+
+<title>Recenze XLN Audio Life | Synth Verdict</title>
+<meta name="description" content="Recenze XLN Audio Life — AI sampler, který z vlastních nahrávek generuje beaty. Zvuk, workflow, cena a verdikt.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://synthreviews.github.io/life.html">
+
+<meta property="og:title" content="Recenze XLN Audio Life | Synth Verdict">
+<meta property="og:description" content="Recenze XLN Audio Life — AI sampler, který z vlastních nahrávek generuje beaty. Zvuk, workflow, cena a verdikt.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "XLN Audio Life",
+    "brand": "XLN Audio"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "8.3",
+    "bestRating": "10"
+  },
+  "author": { "@type": "Organization", "name": "Synth Verdict" }
+}
+</script>
+
+<style>
+.lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
+.lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
+.lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+.synthlucida-note{font-size:0.85rem;color:var(--text-dim,rgba(255,255,255,0.65));margin:10px auto 0;max-width:520px;line-height:1.5;}
+.synthlucida-note a{color:#7dd3fc;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(125,211,252,0.4);}
+.synthlucida-note a:hover{border-bottom-color:#7dd3fc;}
+.footer-synthlucida{margin-top:10px;font-size:0.85rem;}
+.footer-synthlucida a{color:#7dd3fc;text-decoration:none;font-weight:600;}
+.footer-synthlucida a:hover{text-decoration:underline;}
+</style>
+</head>
+<body data-sw-path="sw.js">
+
+<div class="starfield" id="starfield" aria-hidden="true"></div>
+<div class="horizon" aria-hidden="true"></div>
+
+<main class="container">
+
+<header class="site-header">
+  <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
+  <nav class="nav-links" aria-label="Hlavní navigace">
+    <a href="index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
+    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
+    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
+    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
+    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
+    <a href="life.html" class="active" data-i18n="nav-life">🎵 Life</a>
+  </nav>
+  <p class="synthlucida-note" data-i18n="synthlucida-note">🎧 Synth Verdict je vedlejší projekt hudebního producenta <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — poslechněte si jeho ambientní a chillout elektronickou hudbu.</p>
+  <div class="lang-toggle-wrap">
+    <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
+  </div>
+</header>
+
+<div class="hero-art">
+  <span class="kicker" data-i18n="kicker">Sampler / generátor beatů</span>
+  <h1>XLN Audio Life</h1>
+  <p style="color:var(--text-dim);" data-i18n="hero-sub">AI sampler, který z nahrávek vašeho života generuje nekonečné beaty.</p>
+  <div class="verdict-score">⭐ 8.3 / 10 &nbsp;|&nbsp; ★★★★☆</div>
+</div>
+
+<article class="review">
+
+<h2 data-i18n="h-what">Co je XLN Audio Life</h2>
+<p data-i18n="p-what">Life je kreativní sampler od XLN Audio, který mění nahrané zvuky — kapající kohoutek, praskající zesilovač, kroky na štěrku — na hotové rytmické beaty. Místo procházení knihoven samplů stačí zvuk nahrát nebo importovat a Life ho během chvilky automaticky rozřeže a přemění na groove.</p>
+
+<h2 data-i18n="h-sound">Zvuk a tvorba beatů</h2>
+<p data-i18n="p-sound">Základem je vlastní nahrávka — ať už z doprovodné mobilní aplikace Life Field Recorder (zdarma pro iOS a Android), z Life DAW Recorderu přímo v DAW, nebo import existujícího audia či videa. Life analyzuje zvukové vlastnosti nahrávky, rozdělí ji na slice a z těch pak generuje kompletně nové beaty — výsledný charakter zvuku je tak pokaždé jiný a osobitý, na rozdíl od hotových sample packů.</p>
+
+<h2 data-i18n="h-workflow">Ovládání a workflow</h2>
+<p data-i18n="p-workflow">Workflow stojí na tlačítku Randomize a AI ovládaných parametrech Density, Syncopation a Symmetry, které generují nekonečné variace beatu i použitých zvuků. Pro jemné doladění jsou k dispozici Slice Points, vestavěné sekvencery, filtry a efekty. Life vyžaduje aktivní internetové připojení — nahrávky a beaty se totiž průběžně ukládají do cloudového úložiště na účtu xlnaudio.com, takže jsou dostupné na libovolném počítači po přihlášení.</p>
+
+<h2 data-i18n="h-price">Cena</h2>
+<p data-i18n="p-price">Life je čistě placený plugin bez trvale bezplatné verze — k dispozici je 10denní zkušební verze zdarma. Plná licence stojí 149 USD, k dispozici je i možnost platby po splátkách. V ceně je plugin i standalone aplikace, mobilní Field Recorder a Life DAW Recorder.</p>
+
+<div class="pros-cons">
+  <div class="pros">
+    <h4 data-i18n="pros-h">Klady</h4>
+    <ul>
+      <li data-i18n="pro1">Originální koncept — beaty z vlastních nahrávek, ne z hotových knihoven</li>
+      <li data-i18n="pro2">AI ovládané variace (Density, Syncopation, Symmetry) dávají nekonečné možnosti</li>
+      <li data-i18n="pro3">Bezproblémový mobilní Field Recorder pro rychlé nahrávání kdekoliv</li>
+      <li data-i18n="pro4">10denní zkušební verze zdarma na vyzkoušení</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <h4 data-i18n="cons-h">Zápory</h4>
+    <ul>
+      <li data-i18n="con1">Vyžaduje trvalé internetové připojení kvůli cloudové synchronizaci</li>
+      <li data-i18n="con2">Relativně vysoká cena za koncept bez rozsáhlé knihovny obsahu</li>
+      <li data-i18n="con3">Bez trvalé free verze, jen časově omezený trial</li>
+    </ul>
+  </div>
+</div>
+
+<h2 data-i18n="h-specs">Specifikace</h2>
+<table class="specs-table">
+<tr><td data-i18n="spec1-k">Typ</td><td data-i18n="spec1-v">AI sampler / generátor beatů (VST/VST3/AU/AAX + samostatná aplikace)</td></tr>
+<tr><td data-i18n="spec2-k">Zdroj zvuku</td><td data-i18n="spec2-v">Vlastní nahrávky přes Field Recorder (mobil) a DAW Recorder, nebo import audia/videa</td></tr>
+<tr><td data-i18n="spec3-k">Klíčové ovládání</td><td data-i18n="spec3-v">Randomize, Density, Syncopation, Symmetry, Slice Points, FX, sekvencer</td></tr>
+<tr><td data-i18n="spec4-k">Platformy</td><td data-i18n="spec4-v">Windows, macOS (nutné internetové připojení kvůli cloud sync)</td></tr>
+<tr><td data-i18n="spec5-k">Cena</td><td data-i18n="spec5-v">149 USD (možnost platby po splátkách, 10denní trial zdarma)</td></tr>
+</table>
+
+<h2 data-i18n="h-verdict">Verdikt</h2>
+<p data-i18n="p-verdict">Life je jeden z nejoriginálnějších samplerů poslední doby — místo dalšího sample packu nabízí způsob, jak si beaty doslova nahrát ze svého okolí. AI variace fungují překvapivě hudebně a mobilní Field Recorder dělá ze sběru zvuků skoro hru. Trvalá závislost na internetu a cena bez rozsáhlejšího obsahu jsou ale reálné kompromisy, se kterými je třeba počítat.</p>
+
+</article>
+
+<a class="back-link" href="index.html" data-i18n="back">← Zpět na přehled recenzí</a>
+
+<footer>
+  <p data-i18n="footer">© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
+  <div class="footer-synthlucida" data-i18n="footer-synthlucida">🎧 Od stejného tvůrce: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambientní a chillout elektronická hudba.</div>
+</footer>
+
+</main>
+
+<script src="app.js"></script>
+
+<script>
+(function(){
+  var dict = {
+    'nav-home': '🏠 Home',
+    'nav-omni': '🎹 Omnisphere',
+    'nav-nord': '⚡ Nord Lead 4',
+    'nav-nexus': '🌌 Nexus 5',
+    'nav-rippler': '🎛️ Rippler',
+    'nav-xo': '🥁 XO-XO',
+    'nav-life': '🎵 Life',
+    'synthlucida-note': '🎧 Synth Verdict is a side project by electronic music producer <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — check out his ambient and chillout electronic music.',
+    'footer-synthlucida': '🎧 From the same creator: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambient and chillout electronic music.',
+    'kicker': 'Sampler / beat generator',
+    'hero-sub': 'An AI sampler that turns recordings from your life into endless beats.',
+    'h-what': 'What XLN Audio Life is',
+    'p-what': "Life is a creative sampler from XLN Audio that turns recorded sounds — a dripping faucet, a crackling amp, footsteps on gravel — into finished rhythmic beats. Instead of digging through sample libraries, you just record or import a sound and Life automatically slices and turns it into a groove within seconds.",
+    'h-sound': 'Sound and beat creation',
+    'p-sound': "Everything starts from your own recording — captured with the companion Life Field Recorder mobile app (free for iOS and Android), the Life DAW Recorder inside your DAW, or an imported audio or video file. Life analyzes the sonic qualities of the recording, slices it up, and generates completely new beats from those slices — so the resulting sound is different and personal every time, unlike a ready-made sample pack.",
+    'h-workflow': 'Controls and workflow',
+    'p-workflow': "The workflow centers on the Randomize button and AI-powered Density, Syncopation and Symmetry controls, which generate endless variations of both the beat and the sounds used. For fine-tuning there are Slice Points, built-in sequencers, filters and effects. Life requires an active internet connection, since recordings and beats are continuously synced to cloud storage tied to your xlnaudio.com account, making them available on any computer once you sign in.",
+    'h-price': 'Price',
+    'p-price': "Life is a purely paid plugin with no permanent free version — a 10-day free trial is available. The full license costs $149, with an installment payment option also available. The price includes the plugin, the standalone app, the mobile Field Recorder and the Life DAW Recorder.",
+    'pros-h': 'Pros',
+    'pro1': 'A genuinely original concept — beats built from your own recordings, not preset libraries',
+    'pro2': 'AI-powered variation controls (Density, Syncopation, Symmetry) give near-endless possibilities',
+    'pro3': 'Frictionless mobile Field Recorder for capturing sounds anywhere, instantly',
+    'pro4': 'A 10-day free trial to try before you buy',
+    'cons-h': 'Cons',
+    'con1': 'Requires a constant internet connection because of cloud syncing',
+    'con2': 'Fairly pricey for a concept plugin without a large bundled content library',
+    'con3': 'No permanent free tier, only a time-limited trial',
+    'h-specs': 'Specifications',
+    'spec1-k': 'Type', 'spec1-v': 'AI sampler / beat generator (VST/VST3/AU/AAX + standalone app)',
+    'spec2-k': 'Sound source', 'spec2-v': 'Your own recordings via Field Recorder (mobile) and DAW Recorder, or imported audio/video',
+    'spec3-k': 'Key controls', 'spec3-v': 'Randomize, Density, Syncopation, Symmetry, Slice Points, FX, sequencer',
+    'spec4-k': 'Platforms', 'spec4-v': 'Windows, macOS (internet connection required for cloud sync)',
+    'spec5-k': 'Price', 'spec5-v': '$149 (installment payment option available, 10-day free trial)',
+    'h-verdict': 'Verdict',
+    'p-verdict': "Life is one of the most original samplers to come along in a while — instead of another sample pack, it offers a way to literally record your beats from the world around you. The AI variation engine is surprisingly musical, and the mobile Field Recorder makes collecting sounds feel almost like a game. The permanent internet dependency and the price relative to the bundled content are real trade-offs worth weighing, though.",
+    'back': '← Back to all reviews',
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+  };
+  var originalHTML = {};
+  function initLang(){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
+    });
+    var saved = 'en';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'en'; } catch (e) {}
+    if (saved === 'en') setLang('en');
+  }
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (lang === 'en' && dict[key]) ? dict[key] : originalHTML[key];
+    });
+    var btn = document.getElementById('lang-toggle-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🇨🇿 CZ' : '🇬🇧 EN';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'cs';
+    try { localStorage.setItem('synthverdict_lang', lang); } catch (e) {}
+  }
+  window.toggleSVLang = function(){
+    var cur = (document.getElementById('lang-toggle-btn') || {}).textContent === '🇨🇿 CZ' ? 'en' : 'cs';
+    setLang(cur === 'en' ? 'cs' : 'en');
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else { initLang(); }
+})();
+</script>
+
+</body>
+</html>

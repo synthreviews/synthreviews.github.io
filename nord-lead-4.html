@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<link rel="manifest" href="../manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#05123a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Synth Verdict">
-<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
 
 <title>Recenze Nord Lead 4 | Synth Verdict</title>
 <meta name="description" content="Recenze hardwarového syntezátoru Nord Lead 4 — zvuk, ovládání, 20hlasá polyfonie, cena a verdikt.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://synthreviews.github.io/reviews/nord-lead-4.html">
+<link rel="canonical" href="https://synthreviews.github.io/nord-lead-4.html">
 
 <meta property="og:title" content="Recenze Nord Lead 4 — recenze | Synth Verdict">
 <meta property="og:description" content="Recenze hardwarového syntezátoru Nord Lead 4 — zvuk, ovládání, cena a verdikt.">
@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
 {
@@ -52,9 +52,15 @@
 .lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
 .lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
 .lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+.synthlucida-note{font-size:0.85rem;color:var(--text-dim,rgba(255,255,255,0.65));margin:10px auto 0;max-width:520px;line-height:1.5;}
+.synthlucida-note a{color:#7dd3fc;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(125,211,252,0.4);}
+.synthlucida-note a:hover{border-bottom-color:#7dd3fc;}
+.footer-synthlucida{margin-top:10px;font-size:0.85rem;}
+.footer-synthlucida a{color:#7dd3fc;text-decoration:none;font-weight:600;}
+.footer-synthlucida a:hover{text-decoration:underline;}
 </style>
 </head>
-<body data-sw-path="../sw.js">
+<body data-sw-path="sw.js">
 
 <div class="starfield" id="starfield" aria-hidden="true"></div>
 <div class="horizon" aria-hidden="true"></div>
@@ -64,13 +70,15 @@
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
   <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="../index.html" data-i18n="nav-home">🏠 Domů</a>
+    <a href="index.html" data-i18n="nav-home">🏠 Domů</a>
     <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
     <a href="nord-lead-4.html" class="active" data-i18n="nav-nord">⚡ Nord Lead 4</a>
     <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
     <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
     <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
+    <a href="life.html" data-i18n="nav-life">🎵 Life</a>
   </nav>
+  <p class="synthlucida-note" data-i18n="synthlucida-note">🎧 Synth Verdict je vedlejší projekt hudebního producenta <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — poslechněte si jeho ambientní a chillout elektronickou hudbu.</p>
   <div class="lang-toggle-wrap">
     <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
   </div>
@@ -131,15 +139,16 @@
 
 </article>
 
-<a class="back-link" href="../index.html" data-i18n="back">← Zpět na přehled recenzí</a>
+<a class="back-link" href="index.html" data-i18n="back">← Zpět na přehled recenzí</a>
 
-<footer data-i18n="footer">
-  <p>© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
+<footer>
+  <p data-i18n="footer">© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
+  <div class="footer-synthlucida" data-i18n="footer-synthlucida">🎧 Od stejného tvůrce: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambientní a chillout elektronická hudba.</div>
 </footer>
 
 </main>
 
-<script src="../app.js"></script>
+<script src="app.js"></script>
 
 <script>
 (function(){
@@ -150,6 +159,8 @@
     'nav-nexus': '🌌 Nexus 5',
     'nav-rippler': '🎛️ Rippler',
     'nav-xo': '🥁 XO-XO',
+    'nav-life': '🎵 Life',
+    'synthlucida-note': '🎧 Synth Verdict is a side project by electronic music producer <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — check out his ambient and chillout electronic music.',
     'kicker': 'Hardware synthesizer',
     'hero-sub': 'Virtual-analog synthesis with legendary hands-on control.',
     'h-what': 'What Nord Lead 4 is',
@@ -178,15 +189,16 @@
     'h-verdict': 'Verdict',
     'p-verdict': "The Nord Lead 4 is ideal for producers and players who want fast, tactile sound design without a computer. It's not the cheapest or newest option — the Nord Lead A1 has since joined the current lineup — but with 20-voice polyphony, four multitimbral parts and instant hands-on control, it's still one of the most enjoyable synths to play on the market.",
     'back': '← Back to all reviews',
-    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.'
+    'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.',
+    'footer-synthlucida': '🎧 From the same creator: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambient and chillout electronic music.'
   };
   var originalHTML = {};
   function initLang(){
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       originalHTML[el.getAttribute('data-i18n')] = el.innerHTML;
     });
-    var saved = 'cs';
-    try { saved = localStorage.getItem('synthverdict_lang') || 'cs'; } catch (e) {}
+    var saved = 'en';
+    try { saved = localStorage.getItem('synthverdict_lang') || 'en'; } catch (e) {}
     if (saved === 'en') setLang('en');
   }
   function setLang(lang){
