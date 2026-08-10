@@ -2,7 +2,7 @@
 // Cache-first for static assets, network-first fallback for HTML so
 // article edits show up quickly while still working offline.
 
-const CACHE_NAME = 'synth-verdict-v2';
+const CACHE_NAME = 'synth-verdict-v3';
 
 const CORE_ASSETS = [
   './',
@@ -15,10 +15,10 @@ const CORE_ASSETS = [
   './rippler.html',
   './xo-xo.html',
   './life.html',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/favicon-32.png',
-  './icons/apple-touch-icon.png'
+  './icon-192.png',
+  './icon-512.png',
+  './favicon-32.png',
+  './apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (event) => {
