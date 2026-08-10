@@ -55,9 +55,6 @@
 .lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
 .lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
 .lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
-.synthlucida-note{font-size:0.85rem;color:var(--text-dim,rgba(255,255,255,0.65));margin:10px auto 0;max-width:520px;line-height:1.5;}
-.synthlucida-note a{color:#7dd3fc;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(125,211,252,0.4);}
-.synthlucida-note a:hover{border-bottom-color:#7dd3fc;}
 .footer-synthlucida{margin-top:10px;font-size:0.85rem;}
 .footer-synthlucida a{color:#7dd3fc;text-decoration:none;font-weight:600;}
 .footer-synthlucida a:hover{text-decoration:underline;}
@@ -81,7 +78,6 @@
     <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
     <a href="life.html" class="active" data-i18n="nav-life">🎵 Life</a>
   </nav>
-  <p class="synthlucida-note" data-i18n="synthlucida-note">🎧 Synth Verdict je vedlejší projekt hudebního producenta <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — poslechněte si jeho ambientní a chillout elektronickou hudbu.</p>
   <div class="lang-toggle-wrap">
     <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
   </div>
@@ -146,7 +142,7 @@
 
 <footer>
   <p data-i18n="footer">© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</p>
-  <div class="footer-synthlucida" data-i18n="footer-synthlucida">🎧 Od stejného tvůrce: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambientní a chillout elektronická hudba.</div>
+  <div class="footer-synthlucida" data-i18n="footer-synthlucida"><a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a></div>
 </footer>
 
 </main>
@@ -163,8 +159,7 @@
     'nav-rippler': '🎛️ Rippler',
     'nav-xo': '🥁 XO-XO',
     'nav-life': '🎵 Life',
-    'synthlucida-note': '🎧 Synth Verdict is a side project by electronic music producer <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">SYNTHLUCIDA</a> — check out his ambient and chillout electronic music.',
-    'footer-synthlucida': '🎧 From the same creator: <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> — ambient and chillout electronic music.',
+    'footer-synthlucida': '<a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a>',
     'kicker': 'Sampler / beat generator',
     'hero-sub': 'An AI sampler that turns recordings from your life into endless beats.',
     'h-what': 'What XLN Audio Life is',
