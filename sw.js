@@ -2,7 +2,7 @@
 // Cache-first for static assets, network-first fallback for HTML so
 // article edits show up quickly while still working offline.
 
-const CACHE_NAME = 'synth-verdict-v5';
+const CACHE_NAME = 'synth-verdict-v7';
 
 const CORE_ASSETS = [
   './',
@@ -15,6 +15,8 @@ const CORE_ASSETS = [
   './rippler.html',
   './xo-xo.html',
   './life.html',
+  './rapid.html',
+  './acid-v.html',
   './icon-192.png',
   './icon-512.png',
   './favicon-32.png',
