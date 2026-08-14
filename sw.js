@@ -1,8 +1,14 @@
 // Synth Verdict — service worker
-// Cache-first for static assets, network-first fallback for HTML so
-// article edits show up quickly while still working offline.
+// HTML: network-first, so article edits show up immediately when online,
+// with a cached fallback for offline use.
+// Everything else (CSS/JS/icons): stale-while-revalidate — the cached
+// copy is served instantly, while a fresh copy is fetched in the
+// background and silently saved for next time. That means new deploys
+// of style.css / app.js / icons pick themselves up automatically on
+// the next visit — no need to bump CACHE_NAME by hand just to get
+// static assets to refresh.
 
-const CACHE_NAME = 'synth-verdict-v7';
+const CACHE_NAME = 'synth-verdict-v9';
 
 const CORE_ASSETS = [
   './',
@@ -46,7 +52,8 @@ self.addEventListener('fetch', (event) => {
   const isHTML = req.headers.get('accept') && req.headers.get('accept').includes('text/html');
 
   if (isHTML) {
-    // network-first for pages
+    // network-first for pages: always try to get the latest article
+    // text; fall back to cache (or index.html) when offline.
     event.respondWith(
       fetch(req)
         .then((res) => {
@@ -59,15 +66,21 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // cache-first for everything else (css, images, fonts)
+  // stale-while-revalidate for everything else (css, js, images, fonts):
+  // serve the cached copy instantly if we have one, and refresh the
+  // cache from the network in the background so the next visit already
+  // gets the new version — no manual cache-version bump needed.
   event.respondWith(
-    caches.match(req).then((cached) => {
-      if (cached) return cached;
-      return fetch(req).then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
-        return res;
-      });
-    })
+    caches.open(CACHE_NAME).then((cache) =>
+      cache.match(req).then((cached) => {
+        const networkFetch = fetch(req)
+          .then((res) => {
+            if (res && res.ok) cache.put(req, res.clone());
+            return res;
+          })
+          .catch(() => cached);
+        return cached || networkFetch;
+      })
+    )
   );
 });

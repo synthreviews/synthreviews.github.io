@@ -55,6 +55,9 @@
 .lang-toggle-wrap{display:flex;justify-content:center;margin:10px 0 4px;}
 .lang-toggle-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:background .2s;}
 .lang-toggle-btn:hover{background:rgba(255,255,255,0.14);}
+.nav-back-wrap{display:flex;justify-content:center;margin-top:10px;}
+.nav-back-btn{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-size:0.85rem;text-decoration:none;font-weight:600;transition:background .2s;}
+.nav-back-btn:hover{background:rgba(255,255,255,0.14);}
 .footer-synthlucida{margin-top:10px;font-size:0.85rem;}
 .footer-synthlucida a{color:#7dd3fc;text-decoration:none;font-weight:600;}
 .footer-synthlucida a:hover{text-decoration:underline;}
@@ -69,17 +72,9 @@
 
 <header class="site-header">
   <h1 class="brand" style="font-size:1.6rem;">SYNTH VERDICT</h1>
-  <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="index.html" data-i18n="nav-home">🏠 Domů</a>
-    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
-    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
-    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
-    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
-    <a href="life.html" data-i18n="nav-life">🎵 Life</a>
-    <a href="rapid.html" data-i18n="nav-rapid">🚀 RAPID</a>
-    <a href="acid-v.html" class="active" data-i18n="nav-acidv">🧪 Acid V</a>
-  </nav>
+  <div class="nav-back-wrap">
+    <a class="nav-back-btn" href="index.html" data-i18n="nav-back">← Všechny recenze</a>
+  </div>
   <div class="lang-toggle-wrap">
     <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
   </div>
@@ -157,15 +152,7 @@
 <script>
 (function(){
   var dict = {
-    'nav-home': '🏠 Home',
-    'nav-omni': '🎹 Omnisphere',
-    'nav-nord': '⚡ Nord Lead 4',
-    'nav-nexus': '🌌 Nexus 5',
-    'nav-rippler': '🎛️ Rippler',
-    'nav-xo': '🥁 XO-XO',
-    'nav-life': '🎵 Life',
-    'nav-rapid': '🚀 RAPID',
-    'nav-acidv': '🧪 Acid V',
+    'nav-back': '← All reviews',
     'kicker': 'Software synthesizer / bassline emulation',
     'hero-sub': 'A software emulation of the legendary TB-303, supercharged with a sub-oscillator, distortion and a modern sequencer.',
     'h-what': 'What Acid V is',

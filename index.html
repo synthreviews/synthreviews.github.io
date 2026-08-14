@@ -52,6 +52,9 @@
 .footer-synthlucida{margin-top:10px;font-size:0.85rem;}
 .footer-synthlucida a{color:#7dd3fc;text-decoration:none;font-weight:600;}
 .footer-synthlucida a:hover{text-decoration:underline;}
+.synthlucida-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px;}
+.synthlucida-links a{background:rgba(255,255,255,0.06);border:1px solid var(--card-border,rgba(255,255,255,0.18));color:var(--text,#fff);border-radius:999px;padding:8px 16px;font-size:0.9rem;text-decoration:none;font-weight:600;transition:background .2s;}
+.synthlucida-links a:hover{background:rgba(255,255,255,0.14);}
 </style>
 </head>
 <body data-sw-path="./sw.js">
@@ -72,17 +75,6 @@
 <header class="site-header">
   <h1 class="brand">SYNTH VERDICT</h1>
   <p class="tagline" data-i18n="tagline">Nezávislé recenze syntezátorů a hudebních pluginů — zvuk, workflow, cena, verdikt.</p>
-  <nav class="nav-links" aria-label="Hlavní navigace">
-    <a href="index.html" class="active" data-i18n="nav-home">🏠 Domů</a>
-    <a href="omnisphere.html" data-i18n="nav-omni">🎹 Omnisphere</a>
-    <a href="nord-lead-4.html" data-i18n="nav-nord">⚡ Nord Lead 4</a>
-    <a href="nexus5.html" data-i18n="nav-nexus">🌌 Nexus 5</a>
-    <a href="rippler.html" data-i18n="nav-rippler">🎛️ Rippler</a>
-    <a href="xo-xo.html" data-i18n="nav-xo">🥁 XO-XO</a>
-    <a href="life.html" data-i18n="nav-life">🎵 Life</a>
-    <a href="rapid.html" data-i18n="nav-rapid">🚀 RAPID</a>
-    <a href="acid-v.html" data-i18n="nav-acidv">🧪 Acid V</a>
-  </nav>
   <div class="lang-toggle-wrap">
     <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleSVLang()" aria-label="Přepnout jazyk / Switch language" title="Přepnout jazyk / Switch language">🇬🇧 EN</button>
   </div>
@@ -155,6 +147,19 @@
   <p data-i18n="about-text">Synth Verdict testuje syntezátory a produkční pluginy z pohledu praktického použití ve skladbách — ne jen podle specifikací. Každá recenze obsahuje hodnocení zvuku, workflow, stability a poměru cena/výkon, plus jasné plusy a mínusy. Fakta v recenzích průběžně ověřujeme podle oficiálních stránek výrobců.</p>
 </article>
 
+<h2 class="section-title" data-i18n="sl-title">Kdo stojí za <span>Synth Verdict</span></h2>
+<article class="review" style="text-align:center;">
+  <p data-i18n="sl-text1">Synth Verdict vede SYNTHLUCIDA — nezávislý český elektronický hudebník a producent, vystupující pod jménem DAZANTE, který tvoří atmosférickou hudbu v žánrech chillout, ambient, trance a progressive house s filmovým sound designem. Syntezátory a pluginy z těchto recenzí prochází reálným testem přímo ve vlastní studiové produkci.</p>
+  <p data-i18n="sl-text2">Na <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> najdete kromě hudby a novinek ze studia i bezplatný Relax Player — ambientní přehrávač na relaxaci, soustředění a usínání, s vlastními rádiovými playlisty, vizuálními tématy a dechovými cvičeními.</p>
+  <div class="synthlucida-links">
+    <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer" data-i18n="sl-link-site">🌙 synthlucida.com</a>
+    <a href="https://synthlucida.com/player.html" target="_blank" rel="noopener noreferrer" data-i18n="sl-link-player">🎧 Relax Player</a>
+    <a href="https://open.spotify.com/artist/4OSHQSirFlyQQ9ueUH7CFE" target="_blank" rel="noopener noreferrer" data-i18n="sl-link-spotify">🎵 Spotify</a>
+    <a href="https://www.youtube.com/@synthlucida" target="_blank" rel="noopener noreferrer" data-i18n="sl-link-youtube">🎬 YouTube</a>
+    <a href="https://dazante.bandcamp.com" target="_blank" rel="noopener noreferrer" data-i18n="sl-link-bandcamp">🎼 Bandcamp</a>
+  </div>
+</article>
+
 <footer>
 <span data-i18n="footer">© 2026 Synth Verdict. Nezávislý recenzní web — neafiliováno s výrobci uvedených produktů.</span>
 <div class="footer-synthlucida" data-i18n="footer-synthlucida"><a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a></div>
@@ -170,15 +175,6 @@
     'install-banner': '📲 Install Synth Verdict as an app',
     'install-btn': 'Install',
     'tagline': 'Independent reviews of synthesizers and music plugins — sound, workflow, price, verdict.',
-    'nav-home': '🏠 Home',
-    'nav-omni': '🎹 Omnisphere',
-    'nav-nord': '⚡ Nord Lead 4',
-    'nav-nexus': '🌌 Nexus 5',
-    'nav-rippler': '🎛️ Rippler',
-    'nav-xo': '🥁 XO-XO',
-    'nav-life': '🎵 Life',
-    'nav-rapid': '🚀 RAPID',
-    'nav-acidv': '🧪 Acid V',
     'latest-title': 'Latest <span>reviews</span>',
     'card-omni-kicker': 'Software synthesizer',
     'card-omni-title': 'Spectrasonics Omnisphere 3',
@@ -207,7 +203,15 @@
     'about-title': 'About <span>this site</span>',
     'about-text': "Synth Verdict tests synthesizers and production plugins from a practical, in-the-mix perspective — not just by spec sheet. Every review covers sound, workflow, stability and value for money, plus clear pros and cons. We periodically re-check the facts in our reviews against manufacturers' official pages.",
     'footer': '© 2026 Synth Verdict. Independent review site — not affiliated with the manufacturers of the products reviewed.',
-    'footer-synthlucida': '<a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a>'
+    'footer-synthlucida': '<a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a>',
+    'sl-title': 'The person behind <span>Synth Verdict</span>',
+    'sl-text1': "Synth Verdict is run by SYNTHLUCIDA — an independent Czech electronic musician and producer performing under the name DAZANTE, who creates atmospheric music in the chillout, ambient, trance and progressive house genres with cinematic sound design. The synthesizers and plugins covered in these reviews get put through their paces in real studio productions.",
+    'sl-text2': 'At <a href="https://synthlucida.com" target="_blank" rel="noopener noreferrer">synthlucida.com</a> you\'ll find, besides the music and studio news, a free Relax Player — an ambient player for relaxation, focus and falling asleep, with its own radio playlists, visual themes and breathing exercises.',
+    'sl-link-site': '🌙 synthlucida.com',
+    'sl-link-player': '🎧 Relax Player',
+    'sl-link-spotify': '🎵 Spotify',
+    'sl-link-youtube': '🎬 YouTube',
+    'sl-link-bandcamp': '🎼 Bandcamp'
   };
   var originalHTML = {};
   function initLang(){
