@@ -1,0 +1,24 @@
+{
+  "id": "./snekometr.html",
+  "name": "ŠNEKOMETR",
+  "short_name": "ŠNEKOMETR",
+  "description": "Pracovní deník",
+  "start_url": "./snekometr_page.html",
+  "scope": "./snekometr_page.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#06120c",
+  "lang": "cs",
+  "icons": [
+    {
+      "src": "snekometr-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "snekometr-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
