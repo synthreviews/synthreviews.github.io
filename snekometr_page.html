@@ -782,18 +782,88 @@
     "Dnešní motto: klid šneka, tempo gazely."
   ];
 
-  // ---------- default wage-ladder data ----------
-  // Fresh install starts with NO pre-filled tasks/norms — the settings form
-  // shows an empty state and the user builds their own wage ladder from
-  // scratch via "+ Přidat nový úkon". (Used to ship with three made-up
-  // example tasks — Rankoky/Máslování/Přebírání — pre-populated with fake
-  // numbers; that's gone now.)
+  // ---------- default wage-ladder data (přepsáno z fotek norem) ----------
   function defaultSettings(){
     return {
       appName: "ŠNEKOMETR",
       slogan: "Pracovní deník výkonu a mzdy (a šnečích hlášek)",
       shiftHours: 7,
-      tasks: []
+      tasks: [
+        {
+          id:"rankoky", name:"Rankoky (plnění masa do ulit)", unit:"ks", rateBasis:"hour",
+          sizes:[
+            { id:"r_8_10", name:"8-10", tiers:[
+              {threshold:1100,wage:125,bonusMin:-10,bonusMax:10},
+              {threshold:1300,wage:129,bonusMin:-15,bonusMax:15},
+              {threshold:1500,wage:144,bonusMin:-15,bonusMax:15},
+              {threshold:1700,wage:154,bonusMin:-15,bonusMax:15},
+              {threshold:1850,wage:164,bonusMin:-15,bonusMax:15},
+              {threshold:2000,wage:175,bonusMin:-15,bonusMax:15},
+              {threshold:2150,wage:186,bonusMin:-15,bonusMax:15},
+              {threshold:2300,wage:196,bonusMin:-15,bonusMax:15},
+              {threshold:2450,wage:207,bonusMin:-15,bonusMax:15},
+              {threshold:2600,wage:217,bonusMin:-15,bonusMax:15},
+              {threshold:3750,wage:228,bonusMin:-15,bonusMax:15}
+            ]},
+            { id:"r_12_14", name:"12-14", tiers:[
+              {threshold:1000,wage:125,bonusMin:-10,bonusMax:10},
+              {threshold:1200,wage:132,bonusMin:-15,bonusMax:15},
+              {threshold:1400,wage:144,bonusMin:-15,bonusMax:15},
+              {threshold:1600,wage:157,bonusMin:-15,bonusMax:15},
+              {threshold:1750,wage:166,bonusMin:-15,bonusMax:15},
+              {threshold:1900,wage:175,bonusMin:-15,bonusMax:15},
+              {threshold:2050,wage:186,bonusMin:-15,bonusMax:15},
+              {threshold:2200,wage:196,bonusMin:-15,bonusMax:15}
+            ]}
+          ]
+        },
+        {
+          id:"maslovani", name:"Máslování (Preparé)", unit:"ks", rateBasis:"hour",
+          sizes:[
+            { id:"m_std", name:"Standard", tiers:[
+              {threshold:1000,wage:125,bonusMin:-10,bonusMax:10},
+              {threshold:1150,wage:127,bonusMin:-15,bonusMax:15},
+              {threshold:1300,wage:137,bonusMin:-15,bonusMax:15},
+              {threshold:1450,wage:147,bonusMin:-15,bonusMax:15},
+              {threshold:1550,wage:155,bonusMin:-15,bonusMax:15},
+              {threshold:1650,wage:164,bonusMin:-15,bonusMax:15},
+              {threshold:1750,wage:173,bonusMin:-15,bonusMax:15},
+              {threshold:1850,wage:182,bonusMin:-15,bonusMax:15},
+              {threshold:1950,wage:191,bonusMin:-15,bonusMax:15},
+              {threshold:2050,wage:200,bonusMin:-15,bonusMax:15},
+              {threshold:2150,wage:209,bonusMin:-15,bonusMax:15}
+            ]}
+          ]
+        },
+        {
+          id:"prebirani", name:"Přebírání (ulit)", unit:"kg", rateBasis:"shift",
+          sizes:[
+            { id:"p_12_14", name:"12-14", tiers:[
+              {threshold:0,wage:125,bonusMin:0,bonusMax:0},
+              {threshold:100,wage:125,bonusMin:10,bonusMax:25},
+              {threshold:115,wage:125,bonusMin:20,bonusMax:35}
+            ]},
+            { id:"p_10", name:"10", tiers:[
+              {threshold:0,wage:129,bonusMin:0,bonusMax:0},
+              {threshold:110,wage:129,bonusMin:5,bonusMax:15},
+              {threshold:125,wage:129,bonusMin:15,bonusMax:25},
+              {threshold:145,wage:129,bonusMin:20,bonusMax:35}
+            ]},
+            { id:"p_8", name:"8", tiers:[
+              {threshold:0,wage:129,bonusMin:0,bonusMax:0},
+              {threshold:120,wage:129,bonusMin:5,bonusMax:20},
+              {threshold:140,wage:129,bonusMin:15,bonusMax:30},
+              {threshold:160,wage:129,bonusMin:25,bonusMax:40}
+            ]},
+            { id:"p_6_8", name:"6-8", tiers:[
+              {threshold:0,wage:129,bonusMin:0,bonusMax:0},
+              {threshold:120,wage:129,bonusMin:5,bonusMax:20},
+              {threshold:140,wage:129,bonusMin:15,bonusMax:30},
+              {threshold:160,wage:129,bonusMin:25,bonusMax:40}
+            ]}
+          ]
+        }
+      ]
     };
   }
 
