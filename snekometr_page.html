@@ -862,6 +862,13 @@
           var n = Number(sz.norm)||0;
           sz.tiers = n>0 ? [{ threshold:n, wage:0, bonusMin:0, bonusMax:0 }] : [{ threshold:0, wage:0, bonusMin:0, bonusMax:0 }];
         }
+        // Every tier needs a stable id so the settings UI can always find
+        // the *same* tier again after editing a threshold reorders them
+        // (rows are displayed sorted by threshold, but must stay matched
+        // to their underlying tier object regardless of on-screen order).
+        // Backfills ids for tiers saved before this existed (defaults and
+        // any older/imported data).
+        sz.tiers.forEach(function(tr){ if(!tr.id) tr.id = "tier_"+genId(); });
       });
     });
     return tasks;
@@ -907,6 +914,12 @@
   function taskById(id){ var ts=data.settings.tasks; for(var i=0;i<ts.length;i++) if(ts[i].id===id) return ts[i]; return null; }
   function sizeById(task,id){ if(!task) return null; for(var i=0;i<task.sizes.length;i++) if(task.sizes[i].id===id) return task.sizes[i]; return null; }
   function sortedTiers(size){ return (size.tiers||[]).slice().sort(function(a,b){ return a.threshold-b.threshold; }); }
+  // Look up a tier by its stable id rather than its position in the sorted
+  // list — the sorted position shifts as soon as a threshold is edited,
+  // but the settings form doesn't always redraw immediately (see the
+  // "change" handler below), so id-based lookup is the only way to keep
+  // editing the tier the user actually sees on screen.
+  function tierById(size, id){ var ts=size.tiers||[]; for(var i=0;i<ts.length;i++) if(ts[i].id===id) return ts[i]; return null; }
 
   // Counts saved shift entries that would be orphaned by deleting this
   // task / size (i.e. would silently stop being counted anywhere, since
@@ -1575,7 +1588,7 @@
 
       var sizesHtml = task.sizes.map(function(sz){
         var tiersHtml = sortedTiers(sz).map(function(tr, tIdx){
-          return '<div class="tier-row" data-tier-idx="'+tIdx+'">' +
+          return '<div class="tier-row" data-tier-idx="'+tIdx+'" data-tier-id="'+tr.id+'">' +
             '<div class="tier-field"><label>#'+(tIdx+1)+' práh ('+(task.unit)+(task.rateBasis==="hour"?"/hod":"/směnu")+')</label><input type="number" data-act="tThreshold" value="'+tr.threshold+'"></div>' +
             '<div class="tier-field"><label>Kč/hod</label><input type="number" data-act="tWage" value="'+tr.wage+'"></div>' +
             '<div class="tier-field"><label>bonus min %</label><input type="number" data-act="tBonusMin" value="'+tr.bonusMin+'"></div>' +
@@ -1623,7 +1636,7 @@
   document.getElementById("addTaskBtn").addEventListener("click", function(){
     data.settings.tasks.push({
       id:"task_"+genId(), name:"Nový úkon", unit:"kg", rateBasis:"hour",
-      sizes:[{ id:"sz_"+genId(), name:"Standard", tiers:[{threshold:1,wage:125,bonusMin:0,bonusMax:0}] }]
+      sizes:[{ id:"sz_"+genId(), name:"Standard", tiers:[{id:"tier_"+genId(), threshold:1,wage:125,bonusMin:0,bonusMax:0}] }]
     });
     saveData(); renderSettings();
   });
@@ -1651,7 +1664,7 @@
         doDelTask();
       }
     } else if(act==="addSize"){
-      task.sizes.push({ id:"sz_"+genId(), name:"Nová velikost", tiers:[{threshold:1,wage:task.sizes[0].tiers[0].wage||125,bonusMin:0,bonusMax:0}] });
+      task.sizes.push({ id:"sz_"+genId(), name:"Nová velikost", tiers:[{id:"tier_"+genId(), threshold:1,wage:task.sizes[0].tiers[0].wage||125,bonusMin:0,bonusMax:0}] });
       saveData(); renderSettings();
     } else if(act==="delSize"){
       var sizeBlock = e.target.closest(".size-block");
@@ -1677,17 +1690,15 @@
       var sizeId2 = sizeBlock2.getAttribute("data-size-id");
       var size = sizeById(task, sizeId2);
       var lastTier = sortedTiers(size).slice(-1)[0];
-      size.tiers.push({ threshold:(lastTier?lastTier.threshold+50:1), wage:(lastTier?lastTier.wage+10:125), bonusMin:0, bonusMax:0 });
+      size.tiers.push({ id:"tier_"+genId(), threshold:(lastTier?lastTier.threshold+50:1), wage:(lastTier?lastTier.wage+10:125), bonusMin:0, bonusMax:0 });
       saveData(); renderSettings(); renderAll();
     } else if(act==="delTier"){
       var sizeBlock3 = e.target.closest(".size-block");
       var sizeId3 = sizeBlock3.getAttribute("data-size-id");
       var size3 = sizeById(task, sizeId3);
-      var tierIdx = +e.target.closest(".tier-row").getAttribute("data-tier-idx");
+      var tierId3 = e.target.closest(".tier-row").getAttribute("data-tier-id");
       if(size3.tiers.length<=1){ showToast("Velikost musí mít aspoň jeden stupeň"); return; }
-      var tiersSorted = sortedTiers(size3);
-      var toRemove = tiersSorted[tierIdx];
-      size3.tiers = size3.tiers.filter(function(t){ return t!==toRemove; });
+      size3.tiers = size3.tiers.filter(function(t){ return t.id!==tierId3; });
       saveData(); renderSettings(); renderAll();
     }
   });
@@ -1727,8 +1738,9 @@
     } else if(act==="tThreshold" || act==="tWage" || act==="tBonusMin" || act==="tBonusMax"){
       var sizeBlock2 = e.target.closest(".size-block");
       var size2 = sizeById(task, sizeBlock2.getAttribute("data-size-id"));
-      var tierIdx = +e.target.closest(".tier-row").getAttribute("data-tier-idx");
-      var tier = sortedTiers(size2)[tierIdx];
+      var tierId = e.target.closest(".tier-row").getAttribute("data-tier-id");
+      var tier = tierById(size2, tierId);
+      if(!tier) return;
       var v = parseFloat(e.target.value); if(isNaN(v)) v=0;
       if(act==="tThreshold") tier.threshold=v;
       else if(act==="tWage") tier.wage=v;
