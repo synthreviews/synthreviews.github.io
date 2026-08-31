@@ -112,17 +112,20 @@
   /* ---- form ---- */
   .field{ margin-bottom:12px; }
   .field label{ display:block; font-size:11px; opacity:0.6; margin-bottom:5px; letter-spacing:0.3px; }
-  .field input[type=date], .field input[type=text], .field input[type=number], .field select, .field textarea{
-    width:100%; background:rgba(255,255,255,0.06); border:1px solid var(--card-border); border-radius:10px;
+  .field input[type=date], .field input[type=text], .field input[type=number], .field select, .field textarea,
+  .entry-row-grid select, .entry-row-grid2 input{
+    width:100%; min-width:0; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid var(--card-border); border-radius:10px;
     color:#fff; font-family:var(--font-body); font-size:14px; padding:10px 12px; -webkit-appearance:none;
   }
+  .field select option, .entry-row-grid select option{ color:#0f1b13; background:#ffffff; }
   .field textarea{ resize:vertical; min-height:44px; font-family:var(--font-body); }
   .checkbox-row{ display:flex; align-items:center; gap:8px; font-size:13px; opacity:0.85; margin-bottom:14px; }
   .checkbox-row input{ width:17px; height:17px; accent-color:var(--accent-color); }
 
   .entry-row{ background:rgba(255,255,255,0.035); border:1px solid var(--card-border); border-radius:14px; padding:12px; margin-bottom:10px; position:relative; }
-  .entry-row-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-  .entry-row-grid2{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .entry-row-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; }
+  .entry-row-grid2{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; margin-top:8px; }
+  .entry-row-grid > div, .entry-row-grid2 > div{ min-width:0; }
   .entry-row .row-remove{ position:absolute; top:8px; right:8px; z-index:2; background:none; border:none; color:rgba(255,255,255,0.35);
     font-size:15px; cursor:pointer; width:24px; height:24px; border-radius:50%; line-height:1; }
   .entry-row .row-remove:active{ background:rgba(255,255,255,0.1); }
@@ -248,7 +251,8 @@
   /* ---- settings ---- */
   .task-block{ background:rgba(255,255,255,0.03); border-radius:14px; padding:12px; margin-bottom:10px; }
   .task-block-head{ display:flex; align-items:center; gap:8px; margin-bottom:6px; flex-wrap:wrap; }
-  .task-block-head input[type=text]{ flex:1; min-width:100px; }
+  .task-block-head input[type=text]{ flex:1; min-width:100px; background:rgba(255,255,255,0.06); border:1px solid var(--card-border);
+    border-radius:8px; color:#fff; font-family:var(--font-body); font-size:12.5px; padding:7px 8px; font-weight:600; }
   .task-basis-row{ display:flex; align-items:center; gap:8px; margin-bottom:10px; font-size:11px; opacity:0.7; }
   .task-basis-row select{ flex-shrink:0; background:rgba(255,255,255,0.06); border:1px solid var(--card-border); border-radius:8px; color:#fff; font-size:11.5px; padding:5px 8px; }
   .task-basis-row select option{ color:#0f1b13; background:#ffffff; }
@@ -265,7 +269,9 @@
   .mini-btn{ background:rgba(52,211,153,0.12); color:var(--accent-color); border:1px dashed rgba(52,211,153,0.5); border-radius:8px;
     font-size:11px; padding:6px 10px; cursor:pointer; margin-top:2px; }
   .mini-btn-sm{ font-size:10px; padding:5px 8px; }
-  .task-unit-select{ width:auto !important; flex-shrink:0; }
+  .task-unit-select{ width:auto !important; flex-shrink:0; background:rgba(255,255,255,0.06); border:1px solid var(--card-border);
+    border-radius:8px; color:#fff; font-size:11.5px; padding:7px 8px; }
+  .task-unit-select option{ color:#0f1b13; background:#ffffff; }
   .settings-hint{ font-size:11px; opacity:0.5; line-height:1.5; margin-bottom:12px; }
   .del-task-btn{ background:none; border:none; color:var(--bad); font-size:15px; cursor:pointer; flex-shrink:0; }
   .del-size-btn{ background:none; border:none; color:var(--bad); font-size:13px; cursor:pointer; flex-shrink:0; }
