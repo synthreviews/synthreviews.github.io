@@ -6,19 +6,27 @@
   "start_url": "./snekometr_page.html",
   "scope": "./snekometr_page.html",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#06120c",
   "theme_color": "#06120c",
   "lang": "cs",
   "icons": [
     {
       "src": "snekometr-icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "snekometr-icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "snekometr-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
