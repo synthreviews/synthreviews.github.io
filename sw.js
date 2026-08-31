@@ -8,7 +8,7 @@
 // the next visit — no need to bump CACHE_NAME by hand just to get
 // static assets to refresh.
 
-const CACHE_NAME = 'synth-verdict-v19';
+const CACHE_NAME = 'synth-verdict-v20';
 
 const CORE_ASSETS = [
   './',
