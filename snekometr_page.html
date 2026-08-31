@@ -636,8 +636,17 @@
             <span class="export-btn-label">Obnovit ze zálohy (JSON)<span class="export-btn-sub">Nahradí aktuální data souborem ze zálohy</span></span>
           </button>
           <input type="file" id="backupFileInput" accept="application/json,.json" class="sr-only">
+          <button type="button" class="export-btn" id="tablesExportBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+            <span class="export-btn-label">Uložit mzdové tabulky (JSON)<span class="export-btn-sub">Jen úkony, velikosti a stupně – bez historie směn</span></span>
+          </button>
+          <button type="button" class="export-btn" id="tablesImportBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+            <span class="export-btn-label">Nahrát mzdové tabulky (JSON)<span class="export-btn-sub">Nahradí jen úkony/velikosti/stupně, směny zůstanou</span></span>
+          </button>
+          <input type="file" id="tablesFileInput" accept="application/json,.json" class="sr-only">
         </div>
-        <div class="export-hint">Vše funguje offline, přímo v telefonu. Záloha (JSON) je jediný formát, ze kterého lze data zpět obnovit – dělej si ji čas od času, ať o nic nepřijdeš při výměně telefonu.</div>
+        <div class="export-hint">Vše funguje offline, přímo v telefonu. Záloha (JSON) je jediný formát, ze kterého lze data zpět obnovit – dělej si ji čas od času, ať o nic nepřijdeš při výměně telefonu. Mzdové tabulky si můžeš uložit/nahrát zvlášť – hodí se, když si chceš přenést nebo zazálohovat jen nastavené normy, beze změny historie směn.</div>
       </div>
     </details>
 
@@ -677,6 +686,16 @@
     <div class="overlay-actions">
       <button class="btn-cancel" id="importCancel">Zrušit</button>
       <button class="btn-confirm" id="importOk">Obnovit</button>
+    </div>
+  </div>
+</div>
+
+<div id="importTablesOverlay" class="overlay hidden">
+  <div class="overlay-box">
+    <p>Opravdu nahradit aktuální mzdové tabulky (úkony, velikosti, stupně) souborem ze zálohy? Historie směn zůstane beze změny. Tuto akci nelze vrátit zpět.</p>
+    <div class="overlay-actions">
+      <button class="btn-cancel" id="importTablesCancel">Zrušit</button>
+      <button class="btn-confirm" id="importTablesOk">Obnovit</button>
     </div>
   </div>
 </div>
@@ -763,88 +782,18 @@
     "Dnešní motto: klid šneka, tempo gazely."
   ];
 
-  // ---------- default wage-ladder data (přepsáno z fotek norem) ----------
+  // ---------- default wage-ladder data ----------
+  // Fresh install starts with NO pre-filled tasks/norms — the settings form
+  // shows an empty state and the user builds their own wage ladder from
+  // scratch via "+ Přidat nový úkon". (Used to ship with three made-up
+  // example tasks — Rankoky/Máslování/Přebírání — pre-populated with fake
+  // numbers; that's gone now.)
   function defaultSettings(){
     return {
       appName: "ŠNEKOMETR",
       slogan: "Pracovní deník výkonu a mzdy (a šnečích hlášek)",
       shiftHours: 7,
-      tasks: [
-        {
-          id:"rankoky", name:"Rankoky (plnění masa do ulit)", unit:"ks", rateBasis:"hour",
-          sizes:[
-            { id:"r_8_10", name:"8-10", tiers:[
-              {threshold:1100,wage:125,bonusMin:-10,bonusMax:10},
-              {threshold:1300,wage:129,bonusMin:-15,bonusMax:15},
-              {threshold:1500,wage:144,bonusMin:-15,bonusMax:15},
-              {threshold:1700,wage:154,bonusMin:-15,bonusMax:15},
-              {threshold:1850,wage:164,bonusMin:-15,bonusMax:15},
-              {threshold:2000,wage:175,bonusMin:-15,bonusMax:15},
-              {threshold:2150,wage:186,bonusMin:-15,bonusMax:15},
-              {threshold:2300,wage:196,bonusMin:-15,bonusMax:15},
-              {threshold:2450,wage:207,bonusMin:-15,bonusMax:15},
-              {threshold:2600,wage:217,bonusMin:-15,bonusMax:15},
-              {threshold:3750,wage:228,bonusMin:-15,bonusMax:15}
-            ]},
-            { id:"r_12_14", name:"12-14", tiers:[
-              {threshold:1000,wage:125,bonusMin:-10,bonusMax:10},
-              {threshold:1200,wage:132,bonusMin:-15,bonusMax:15},
-              {threshold:1400,wage:144,bonusMin:-15,bonusMax:15},
-              {threshold:1600,wage:157,bonusMin:-15,bonusMax:15},
-              {threshold:1750,wage:166,bonusMin:-15,bonusMax:15},
-              {threshold:1900,wage:175,bonusMin:-15,bonusMax:15},
-              {threshold:2050,wage:186,bonusMin:-15,bonusMax:15},
-              {threshold:2200,wage:196,bonusMin:-15,bonusMax:15}
-            ]}
-          ]
-        },
-        {
-          id:"maslovani", name:"Máslování (Preparé)", unit:"ks", rateBasis:"hour",
-          sizes:[
-            { id:"m_std", name:"Standard", tiers:[
-              {threshold:1000,wage:125,bonusMin:-10,bonusMax:10},
-              {threshold:1150,wage:127,bonusMin:-15,bonusMax:15},
-              {threshold:1300,wage:137,bonusMin:-15,bonusMax:15},
-              {threshold:1450,wage:147,bonusMin:-15,bonusMax:15},
-              {threshold:1550,wage:155,bonusMin:-15,bonusMax:15},
-              {threshold:1650,wage:164,bonusMin:-15,bonusMax:15},
-              {threshold:1750,wage:173,bonusMin:-15,bonusMax:15},
-              {threshold:1850,wage:182,bonusMin:-15,bonusMax:15},
-              {threshold:1950,wage:191,bonusMin:-15,bonusMax:15},
-              {threshold:2050,wage:200,bonusMin:-15,bonusMax:15},
-              {threshold:2150,wage:209,bonusMin:-15,bonusMax:15}
-            ]}
-          ]
-        },
-        {
-          id:"prebirani", name:"Přebírání (ulit)", unit:"kg", rateBasis:"shift",
-          sizes:[
-            { id:"p_12_14", name:"12-14", tiers:[
-              {threshold:0,wage:125,bonusMin:0,bonusMax:0},
-              {threshold:100,wage:125,bonusMin:10,bonusMax:25},
-              {threshold:115,wage:125,bonusMin:20,bonusMax:35}
-            ]},
-            { id:"p_10", name:"10", tiers:[
-              {threshold:0,wage:129,bonusMin:0,bonusMax:0},
-              {threshold:110,wage:129,bonusMin:5,bonusMax:15},
-              {threshold:125,wage:129,bonusMin:15,bonusMax:25},
-              {threshold:145,wage:129,bonusMin:20,bonusMax:35}
-            ]},
-            { id:"p_8", name:"8", tiers:[
-              {threshold:0,wage:129,bonusMin:0,bonusMax:0},
-              {threshold:120,wage:129,bonusMin:5,bonusMax:20},
-              {threshold:140,wage:129,bonusMin:15,bonusMax:30},
-              {threshold:160,wage:129,bonusMin:25,bonusMax:40}
-            ]},
-            { id:"p_6_8", name:"6-8", tiers:[
-              {threshold:0,wage:129,bonusMin:0,bonusMax:0},
-              {threshold:120,wage:129,bonusMin:5,bonusMax:20},
-              {threshold:140,wage:129,bonusMin:15,bonusMax:30},
-              {threshold:160,wage:129,bonusMin:25,bonusMax:40}
-            ]}
-          ]
-        }
-      ]
+      tasks: []
     };
   }
 
@@ -1635,7 +1584,7 @@
   });
   document.getElementById("addTaskBtn").addEventListener("click", function(){
     data.settings.tasks.push({
-      id:"task_"+genId(), name:"Nový úkon", unit:"kg", rateBasis:"hour",
+      id:"task_"+genId(), name:"Nový úkon", unit:"kg", rateBasis:"shift",
       sizes:[{ id:"sz_"+genId(), name:"Standard", tiers:[{id:"tier_"+genId(), threshold:1,wage:125,bonusMin:0,bonusMax:0}] }]
     });
     saveData(); renderSettings();
@@ -1728,7 +1677,31 @@
     // the blur get processed against the still-in-place layout first; the
     // (harmless, idempotent) re-render then happens right after.
     if(act==="taskName"){ task.name = e.target.value || task.name; saveData(); setTimeout(renderAllExceptSettings, 0); }
-    else if(act==="taskUnit"){ task.unit = e.target.value; saveData(); updateThresholdLabels(taskId); setTimeout(renderAllExceptSettings, 0); }
+    else if(act==="taskUnit"){
+      task.unit = e.target.value;
+      // kg and ks norms behave differently in practice (every real ladder we've
+      // been given has kg tied to "celou směnu" and ks tied to "hodinu") — so
+      // when the unit is switched, keep "Vztaženo na" in sync with it rather
+      // than leaving e.g. a kg task labeled "kg/hod", which doesn't happen for
+      // any real norm.
+      task.rateBasis = task.unit==="kg" ? "shift" : "hour";
+      var rateBasisSelect = block.querySelector('[data-act="rateBasis"]');
+      if(rateBasisSelect) rateBasisSelect.value = task.rateBasis;
+      // The threshold numbers are calibrated to the OLD unit (ks vs kg tempo
+      // is not something the app can convert between), so leaving them in
+      // place would silently keep a stale, wrong-looking number under the
+      // new unit. Clear every threshold in this task back to 0 so it's
+      // obvious a fresh table needs typing in — wage/bonus % are left alone
+      // since those don't depend on the unit.
+      task.sizes.forEach(function(sz){
+        sz.tiers.forEach(function(tr){ tr.threshold = 0; });
+      });
+      block.querySelectorAll('.tier-row [data-act="tThreshold"]').forEach(function(input){
+        input.value = 0;
+      });
+      saveData(); updateThresholdLabels(taskId); setTimeout(renderAllExceptSettings, 0);
+      showToast("Jednotka změněna — zadej nové prahy pro "+task.unit+" 🐌");
+    }
     else if(act==="rateBasis"){ task.rateBasis = e.target.value; saveData(); updateThresholdLabels(taskId); setTimeout(renderAllExceptSettings, 0); }
     else if(act==="sizeName"){
       var sizeBlock = e.target.closest(".size-block");
@@ -1812,6 +1785,66 @@
     if(!Array.isArray(d.shifts)) d.shifts = [];
     return d;
   }
+
+  // ---------- export/import: wage tables only (tasks/sizes/tiers, no shifts) ----------
+  document.getElementById("tablesExportBtn").addEventListener("click", function(){
+    var content = JSON.stringify({
+      type: "snekometr-tabulky",
+      shiftHours: data.settings.shiftHours,
+      tasks: data.settings.tasks
+    }, null, 2);
+    var d = new Date();
+    downloadBlob(content, "snekometr-tabulky-"+fmtISO(d)+".json", "application/json");
+    showToast("Tabulky staženy 💾");
+  });
+
+  document.getElementById("tablesImportBtn").addEventListener("click", function(){
+    document.getElementById("tablesFileInput").click();
+  });
+  var pendingTablesImport = null;
+  document.getElementById("tablesFileInput").addEventListener("change", function(e){
+    var file = e.target.files[0];
+    if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev){
+      try {
+        var parsed = JSON.parse(ev.target.result);
+        // Accept either a dedicated tables export ({tasks:[...]}) or a full
+        // backup file (which also has a top-level tasks array under settings)
+        // — pull whichever tasks array is present so a full backup can be
+        // used as the source too, without touching this device's shifts.
+        var tasks = Array.isArray(parsed && parsed.tasks) ? parsed.tasks
+          : (parsed && parsed.settings && Array.isArray(parsed.settings.tasks) ? parsed.settings.tasks : null);
+        if(!parsed || typeof parsed!=="object" || !tasks){
+          showToast("Tenhle soubor nevypadá jako platné mzdové tabulky 🐌"); return;
+        }
+        var shiftHours = typeof parsed.shiftHours==="number" ? parsed.shiftHours
+          : (parsed.settings && typeof parsed.settings.shiftHours==="number" ? parsed.settings.shiftHours : null);
+        pendingTablesImport = { tasks:tasks, shiftHours:shiftHours };
+        document.getElementById("importTablesOverlay").classList.remove("hidden");
+      } catch(err){ showToast("Soubor se nepodařilo přečíst"); }
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  });
+  document.getElementById("importTablesCancel").addEventListener("click", function(){
+    pendingTablesImport = null;
+    document.getElementById("importTablesOverlay").classList.add("hidden");
+  });
+  document.getElementById("importTablesOk").addEventListener("click", function(){
+    if(pendingTablesImport){
+      data.settings.tasks = migrateTasks(pendingTablesImport.tasks);
+      if(typeof pendingTablesImport.shiftHours==="number" && pendingTablesImport.shiftHours>0){
+        data.settings.shiftHours = pendingTablesImport.shiftHours;
+      }
+      saveData();
+      renderSettings();
+      renderAll();
+      showToast("Mzdové tabulky nahrány ✅");
+    }
+    pendingTablesImport = null;
+    document.getElementById("importTablesOverlay").classList.add("hidden");
+  });
 
   document.getElementById("exportCsvBtn").addEventListener("click", function(){
     var rows = [["datum","volno","ukol","velikost","mnozstvi","jednotka","hodiny","tempo","stupen","pocet_stupnu","kc_za_hod","bonus_min_pct","bonus_max_pct","odhad_kc_min","odhad_kc_max","poznamka"]];
