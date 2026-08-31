@@ -1126,6 +1126,26 @@
 
   function clearEntryRows(){ document.getElementById("entryRowsContainer").innerHTML = ""; }
 
+  // An entry row's "Úkon"/"Velikost" <select> options are baked in once,
+  // when the row is created — they don't update on their own when the task
+  // list changes afterwards (task added/renamed/deleted, size added/renamed/
+  // deleted, unit changed). Call this after any settings change that can
+  // affect the task/size list, so every currently-visible row's dropdowns
+  // catch up (keeping the row's current selection if it's still valid).
+  function refreshEntryRowTaskOptions(){
+    document.querySelectorAll("#entryRowsContainer .entry-row").forEach(function(row){
+      var taskSel = row.querySelector('[data-act="task"]');
+      var sizeSel = row.querySelector('[data-act="size"]');
+      if(!taskSel || !sizeSel) return;
+      var task = taskById(taskSel.value) || data.settings.tasks[0] || null;
+      taskSel.innerHTML = taskOptionsHtml(task ? task.id : "");
+      var size = (task && sizeById(task, sizeSel.value)) || (task && task.sizes[0]) || null;
+      sizeSel.innerHTML = sizeOptionsHtml(task, size ? size.id : "");
+      var unitLabel = row.querySelector('[data-act="unitLabel"]');
+      if(unitLabel) unitLabel.textContent = task ? task.unit : "";
+    });
+  }
+
   document.getElementById("addRowBtn").addEventListener("click", function(){ addEntryRow(); });
 
   document.getElementById("entryRowsContainer").addEventListener("click", function(e){
@@ -1657,7 +1677,7 @@
       id:"task_"+genId(), name:"Nový úkon", unit:"kg", rateBasis:"shift",
       sizes:[{ id:"sz_"+genId(), name:"Standard", tiers:[{id:"tier_"+genId(), threshold:1,wage:125,bonusMin:0,bonusMax:0}] }]
     });
-    saveData(); renderSettings();
+    saveData(); renderSettings(); refreshEntryRowTaskOptions();
   });
 
   document.getElementById("tasksSettingsWrap").addEventListener("click", function(e){
@@ -2027,6 +2047,7 @@
     renderHeatmap();
     renderHistory();
     renderSettings();
+    refreshEntryRowTaskOptions();
   }
 
   // Same as renderAll(), but deliberately skips renderSettings().
@@ -2049,6 +2070,7 @@
     renderMonthlyChart();
     renderHeatmap();
     renderHistory();
+    refreshEntryRowTaskOptions();
   }
 
   // Patches just the tier threshold labels for one task block in place
