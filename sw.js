@@ -8,7 +8,7 @@
 // the next visit — no need to bump CACHE_NAME by hand just to get
 // static assets to refresh.
 
-const CACHE_NAME = 'synth-verdict-v20';
+const CACHE_NAME = 'synth-verdict-v30';
 
 const CORE_ASSETS = [
   './',
@@ -51,6 +51,15 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
+
+  // ŠNEKOMETR is a separate mini-app living in this same folder/origin,
+  // with its own manifest (snekometr-manifest.json). It must stay fully
+  // independent of this service worker: no caching under synth-verdict's
+  // cache, and — crucially — no offline fallback to synth's index.html
+  // if it's ever opened offline before being cached. So we don't touch
+  // its requests at all; the browser handles them normally.
+  const url = new URL(req.url);
+  if (/snekometr/i.test(url.pathname)) return;
 
   const isHTML = req.headers.get('accept') && req.headers.get('accept').includes('text/html');
 
