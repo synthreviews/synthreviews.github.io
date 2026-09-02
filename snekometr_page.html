@@ -581,6 +581,21 @@
 
         <h3>XP, level a grafy</h3>
         <p>Karta XP nahoře ukazuje herní level podle zapsaných směn a výkonu – je to jen pro zábavu, na mzdu to nemá vliv. Níže appka hlídá, jestli se tvůj Ø Kč/hod zlepšuje nebo zhoršuje, ukazuje souhrn podle úkonu za posledních 30 dní a grafy za posledních 14 směn, 12 týdnů, 12 měsíců a poslední rok (čím zelenější políčko v roční mapě, tím vyšší stupeň žebříčku ten den).</p>
+        <p><strong>Jak přesně appka počítá XP:</strong></p>
+        <ol>
+          <li>Pro každý zapsaný úkon spočítá appka tvoje tempo (kusy/kg za hodinu, případně přepočtené na směnu) a porovná ho s mzdovými stupni daného úkonu a velikosti.</li>
+          <li>Z toho vyjde <strong>postup</strong> daného úkonu na žebříčku v procentech (0–100 %) – čím vyšší dosažený stupeň, tím vyšší procento. Pokud tempo nedosáhne ani na nejnižší stupeň, počítá se postup jako <strong>0 %</strong> (dřív se taková práce z průměru úplně vynechávala, teď se počítá, ale jako nulový postup).</li>
+          <li>Pokud jsi měla ten den víc úkonů, appka spočítá <strong>průměrný postup za celou směnu</strong>, vážený odpracovanými hodinami u každého úkonu.</li>
+          <li>Z průměrného postupu směny se pak spočítá XP za tu směnu podle jednoduchého vzorce: <strong>5 XP + (postup / 100) × 60 XP</strong>. To znamená:
+            <ul>
+              <li>0 % postupu (celý den pod nejnižším stupněm) → <strong>5 XP</strong> – tedy nikdy 0, protože i odpracovaný den se počítá.</li>
+              <li>100 % postupu (celá směna na nejvyšším stupni) → <strong>65 XP</strong> – maximum za jednu směnu.</li>
+              <li>Mezi tím appka XP plynule doplňuje – např. za 50 % postupu vyjde cca 35 XP.</li>
+            </ul>
+          </li>
+          <li>XP se počítá <strong>ze všech odpracovaných směn</strong> (ne jen z těch, kde se povedlo dosáhnout na nějaký mzdový stupeň) – dny volna se do XP nepočítají vůbec.</li>
+          <li>Součet XP ze všech směn určuje tvůj level (viz stupnice levelů v appce) a série 🔥 se počítá ze směn s postupem 70 % a víc za sebou.</li>
+        </ol>
 
         <h3>Nastavení a mzdové stupně (normy)</h3>
         <p>V sekci „Nastavení a mzdové stupně“ výše nastavuješ skutečný mzdový žebříček:</p>
@@ -735,6 +750,16 @@
     { title:"Královna ulity",          min:1300 },
     { title:"Šnečí legenda linky",     min:2000 }
   ];
+
+  // XP za jednu odpracovanou směnu se počítá lineárně podle průměrného
+  // postupu na mzdovém žebříčku (0–100 %), viz computeXP() níže:
+  //   XP za směnu = XP_MIN_SHIFT + (postup/100) * (XP_MAX_SHIFT - XP_MIN_SHIFT)
+  // XP_MIN_SHIFT je garantované minimum za odpracovanou směnu, i kdyby
+  // postup byl 0 % (tempo pod nejnižším stupněm) – směna se tak NIKDY
+  // nepočítá za 0 XP, jen odpracovat den má svou hodnotu.
+  // XP_MAX_SHIFT je maximum za 100 % postup (celá směna na top stupni).
+  var XP_MIN_SHIFT = 5;
+  var XP_MAX_SHIFT = 65;
 
   var ADVICE = {
     great: [
@@ -987,10 +1012,15 @@
     var totalHours=0, validHours=0, wProgress=0, wWage=0, payLow=0, payHigh=0;
     shift.entries.forEach(function(e){
       var h = Number(e.hours)||0;
+      if(h<=0) return;
       totalHours += h;
       var r = computeEntryResult(e);
+      // Tempo pod nejnižším stupněm (nebo úkon bez nastavených stupňů) už
+      // se nevynechává úplně – počítá se jako 0 % postupu, takže se
+      // odpracované hodiny vždy promítnou do denního průměru postupu.
+      var progress = r ? r.progress : 0;
+      wProgress += progress*h;
       if(r && r.tier){
-        wProgress += r.progress*r.hours;
         wWage += r.wage*r.hours;
         validHours += r.hours;
         payLow += r.payLow;
@@ -999,7 +1029,7 @@
     });
     return {
       hours: totalHours, validHours: validHours,
-      avgProgress: validHours>0 ? wProgress/validHours : null,
+      avgProgress: totalHours>0 ? wProgress/totalHours : null,
       avgWage: validHours>0 ? wWage/validHours : null,
       payLow: payLow, payHigh: payHigh
     };
@@ -1020,6 +1050,14 @@
   }
   function validShiftsAsc(){
     return sortedShiftsAsc().filter(function(x){ return !x.shift.dayOff && x.stats.avgWage!=null; });
+  }
+  // Všechny reálně odpracované směny (volno vynecháno), bez ohledu na to,
+  // jestli ten den vůbec dosáhla na nějaký mzdový stupeň. Používá se pro
+  // XP, protože XP se má počítat z každé odpracované směny, ne jen z těch,
+  // kde padl aspoň nejnižší stupeň (na rozdíl od validShiftsAsc(), která
+  // slouží pro Kč/hod grafy a potřebuje reálnou mzdu).
+  function workedShiftsAsc(){
+    return sortedShiftsAsc().filter(function(x){ return !x.shift.dayOff && x.stats.hours>0; });
   }
 
   function windowAggregate(startISO, endISO){ // [start, end)
@@ -1257,9 +1295,17 @@
   // ---------- XP & levels ----------
   function computeXP(){
     var xp=0, streak=0, maxStreak=0;
-    validShiftsAsc().forEach(function(x){
-      var p = x.stats.avgProgress;
-      var gain = Math.max(0, Math.min(65, Math.round(p-35)));
+    // XP se počítá ze VŠECH odpracovaných směn (workedShiftsAsc), ne jen
+    // z těch, kde se povedlo dosáhnout na mzdový stupeň. Postup (0–100 %)
+    // je díky opravené shiftStats() vždy dostupný, jakmile ten den byly
+    // odpracované nějaké hodiny (tempo pod nejnižším stupněm = 0 %,
+    // nikoli chybějící hodnota).
+    workedShiftsAsc().forEach(function(x){
+      var p = Math.max(0, Math.min(100, x.stats.avgProgress));
+      // Lineární škála: XP_MIN_SHIFT (garantované minimum, i za 0% den)
+      // až XP_MAX_SHIFT (za 100% postup). Za odpracovanou směnu tedy
+      // nikdy nepadá 0 XP, jen o slabším dni je přírůstek menší.
+      var gain = Math.round(XP_MIN_SHIFT + (p/100) * (XP_MAX_SHIFT - XP_MIN_SHIFT));
       xp += gain;
       if(p>=70){ streak++; if(streak>maxStreak) maxStreak=streak; } else { streak=0; }
     });
